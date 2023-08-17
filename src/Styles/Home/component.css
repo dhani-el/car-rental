@@ -14,48 +14,53 @@
 
 #header {
   display: flex;
-  padding: 1.5em 3em;
-  justify-content: space-between;
 }
-#header #authenticator {
-  display: flex;
-}
-#header #authenticator #userDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#header #authButtonDiv {
-  display: flex;
-  align-items: center;
-  gap: 1vw;
-}
-#header #authButtonDiv button {
-  font-size: 0.5em;
-  color: black;
-  line-height: 0;
-  text-transform: none;
-  letter-spacing: 0;
-  padding: 1.5em;
-  font-weight: 900;
-  width: 2em;
-  border-color: black;
-  background-color: whitesmoke;
-}
-#header #authButtonDiv button span {
-  line-height: 0;
-  text-transform: none;
-}
-#header #navBar {
-  display: flex;
-  gap: 2vw;
-  align-items: center;
-  font-weight: 700;
-}
-#header #navBar a {
-  color: rgb(206, 202, 202);
-  text-decoration: none;
-}
-#header #navBar .navLinks:hover {
-  color: white;
+
+@media (orientation: landscape) {
+  #header {
+    padding: 1.5em 3em;
+    justify-content: space-between;
+  }
+  #header #authenticator {
+    display: flex;
+  }
+  #header #authenticator #userDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #header #authButtonDiv {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+  }
+  #header #authButtonDiv button {
+    font-size: 0.5em;
+    color: black;
+    line-height: 0;
+    text-transform: none;
+    letter-spacing: 0;
+    padding: 1.5em;
+    font-weight: 900;
+    width: 2em;
+    border-color: black;
+    background-color: whitesmoke;
+  }
+  #header #authButtonDiv button span {
+    line-height: 0;
+    text-transform: none;
+  }
+  #header #navBar {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    font-weight: 700;
+  }
+  #header #navBar a {
+    color: rgb(206, 202, 202);
+    text-decoration: none;
+  }
+  #header #navBar .navLinks:hover {
+    color: white;
+  }
 }/*# sourceMappingURL=component.css.map */
