@@ -1,0 +1,67 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar-thumb{
+    width: 0;
+}
+*::-webkit-scrollbar-track{
+    width: 0;
+}
+
+#header{
+    display: flex;
+    padding: 1.5em 3em;
+    justify-content: space-between;
+    #authenticator{
+        display: flex;
+        #userDiv{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    #authButtonDiv{
+        // width: 10vw;
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+        button{
+            font-size: 0.5em;
+            color: black;
+            line-height: 0;
+            text-transform: none;
+            letter-spacing: 0;
+            padding: 1.5em;
+            font-weight: 900;
+            width: 2em;
+            border-color: black;
+            background-color: whitesmoke;
+            span{
+                line-height: 0;
+                text-transform: none;
+            }
+        }
+    }
+    #navBar{
+        display: flex;
+        gap: 2vw;
+        align-items: center;
+        font-weight: 700;
+        a{
+            color: rgb(206, 202, 202);
+            text-decoration: none;
+        }
+        .navLinks:hover{
+            color: white;
+        }
+    }
+}
+
+
+@media (orientation:'landscape'){
+    
+}
