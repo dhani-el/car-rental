@@ -12,56 +12,92 @@
     width: 0;
 }
 
+
 #header{
     display: flex;
-    padding: 1.5em 3em;
+    margin: 1.5em;
     justify-content: space-between;
-    #authenticator{
-        display: flex;
-        #userDiv{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    #navBar{
+        display: none;
     }
     #authButtonDiv{
-        // width: 10vw;
-        display: flex;
-        align-items: center;
-        gap: 1vw;
-        button{
-            font-size: 0.5em;
-            color: black;
-            line-height: 0;
-            text-transform: none;
-            letter-spacing: 0;
-            padding: 1.5em;
-            font-weight: 900;
-            width: 2em;
-            border-color: black;
-            background-color: whitesmoke;
-            span{
-                line-height: 0;
-                text-transform: none;
+            display: none;
+    }
+    #menu{
+        #menuBody{
+            display: none;
+            opacity: 0;
+            position: fixed;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: white;
+            z-index: 10;
+            a{
+                color: black;
+                text-decoration: none;
+                font-size: 2em;
             }
         }
-    }
-    #navBar{
-        display: flex;
-        gap: 2vw;
-        align-items: center;
-        font-weight: 700;
-        a{
-            color: rgb(206, 202, 202);
-            text-decoration: none;
-        }
-        .navLinks:hover{
-            color: white;
+        .menuIcons{
+            position: relative;
+            z-index: 11;
         }
     }
 }
 
-
 @media (orientation:'landscape'){
-    
+    #header{
+        margin: 1.5em 3em;
+        justify-content: space-between;
+        #authenticator{
+            display: flex;
+            #userDiv{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        #authButtonDiv{
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+            button{
+                font-size: 0.5em;
+                color: black;
+                line-height: 0;
+                text-transform: none;
+                letter-spacing: 0;
+                padding: 1.5em;
+                font-weight: 900;
+                width: 2em;
+                border-color: black;
+                background-color: whitesmoke;
+                span{
+                    line-height: 0;
+                    text-transform: none;
+                }
+            }
+        }
+        #navBar{
+            display: flex;
+            gap: 2vw;
+            align-items: center;
+            font-weight: 700;
+            a{
+                color: rgb(206, 202, 202);
+                text-decoration: none;
+            }
+            .navLinks:hover{
+                color: white;
+            }
+        }
+        #menu{
+            display:none;
+        }
+    }
 }

@@ -1,8 +1,11 @@
+import {useState} from 'react';
 import { Button } from "@mui/material";
-import Person from "@mui/icons-material/Person";
+import {User} from 'react-feather';
 import Swipe from "@mui/icons-material/Swipe";
-import '../../Styles/Home/component.css'
-
+import ViewList from '@mui/icons-material/ViewList';
+import {Close} from '@mui/icons-material';
+import {motion} from 'framer-motion';
+import '../../Styles/Home/component.css';
 
 type authProp =  {
     loggedIn:boolean
@@ -12,11 +15,14 @@ type userProp = {
     name:string
 }
 
+type menuProp = { isOpen : boolean}
+
 export function Header():JSX.Element{
     return <div id = "header">
              <Logo/>
              <NavBar/>
              <Authenticator loggedIn = {false} />
+             <Menu/>
         </div>
 }
 
@@ -37,22 +43,56 @@ function NavBar():JSX.Element{
 
 function Authenticator(loginProp:authProp):JSX.Element{
     return <div id="authenticator" >
-        {loginProp.loggedIn ? <User name="daniel" /> : <AuthButton/> }
+        {loginProp.loggedIn ? <UserComponent name="daniel" /> : <AuthButton/> }
     </div>
 }
 
-function User(user:userProp): JSX.Element{
+function UserComponent(user:userProp): JSX.Element{
     return <div id="userDiv" >
-        <Person/>
+        <User/>
         <p>hi, {user.name} </p>
     </div>
 }
 
 function AuthButton():JSX.Element{
     return <div id="authButtonDiv">
-                <Button variant="outlined" >LOG IN</Button> 
-                <Button variant="outlined" >SIGN UP</Button>
+                <Button variant="outlined" id="loginButton">LOG IN</Button> 
+                <Button variant="outlined" id="signupButton">SIGN UP</Button>
     </div>
+}
+
+function Menu():JSX.Element{
+    const [isOpen,setIsOpen] = useState(false);
+
+    return <div id="menu">
+                <motion.div onClick={()=>{setIsOpen((!isOpen))}} >
+                   { isOpen ? <Close id ="menuCloseIcon" className='menuIcons' /> :<ViewList id = "menuListIcon" className='menuIcons'/> }
+                </motion.div>
+                <MenuBody isOpen={isOpen} />
+        </div>
+}
+
+function MenuBody({isOpen} : menuProp):JSX.Element{
+    const menuBodyAnim = {
+        initial:{
+            display:'none',
+            scaleX:'0%',
+            scaleY:'0%',
+            opacity:0,
+        },
+        open:{
+            display:'flex',
+            opacity:1,
+            scaleX:'100%',
+            scaleY:'100%',
+        }
+    }
+    return <motion.div initial = "initial" animate = {isOpen?"open" : "initial"} variants={menuBodyAnim} id="menuBody">
+            <a href="#" className="navLinks">Shop</a>
+            <a href="#" className="navLinks">Rent</a>
+            <a href="#" className="navLinks">Dealer</a>
+            <a href="#" className="navLinks">More</a>
+            </motion.div>
 }
 
 export function Body():JSX.Element{
