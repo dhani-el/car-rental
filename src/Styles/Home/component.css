@@ -14,11 +14,42 @@
 
 #header {
   display: flex;
+  margin: 1.5em;
+  justify-content: space-between;
+}
+#header #navBar {
+  display: none;
+}
+#header #authButtonDiv {
+  display: none;
+}
+#header #menu #menuBody {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  z-index: 10;
+}
+#header #menu #menuBody a {
+  color: black;
+  text-decoration: none;
+  font-size: 2em;
+}
+#header #menu .menuIcons {
+  position: relative;
+  z-index: 11;
 }
 
 @media (orientation: landscape) {
   #header {
-    padding: 1.5em 3em;
+    margin: 1.5em 3em;
     justify-content: space-between;
   }
   #header #authenticator {
@@ -62,5 +93,8 @@
   }
   #header #navBar .navLinks:hover {
     color: white;
+  }
+  #header #menu {
+    display: none;
   }
 }/*# sourceMappingURL=component.css.map */
