@@ -6,56 +6,159 @@
 
 *::-webkit-scrollbar-thumb {
   width: 0;
+  height: 0;
 }
 
 *::-webkit-scrollbar-track {
+  height: 0;
   width: 0;
 }
 
 #header {
   display: flex;
-  padding: 1.5em 3em;
+  margin: 1.5em;
   justify-content: space-between;
 }
-#header #authenticator {
-  display: flex;
+#header #navBar {
+  display: none;
 }
-#header #authenticator #userDiv {
+#header #authButtonDiv {
+  display: none;
+}
+#header #menu #menuBody {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  z-index: 10;
+}
+#header #menu #menuBody a {
+  color: black;
+  text-decoration: none;
+  font-size: 2em;
+}
+#header #menu .menuIcons {
+  position: relative;
+  z-index: 11;
+}
+
+#bodyDiv {
+  position: relative;
+}
+#bodyDiv #abslouteContentContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 82vh;
 }
-#header #authButtonDiv {
+#bodyDiv #abslouteContentContainer #top {
   display: flex;
-  align-items: center;
-  gap: 1vw;
+  width: 100vw;
+  height: 40vh;
+  padding: 0 3.5em;
+  padding-top: 2em;
+  justify-content: space-between;
 }
-#header #authButtonDiv button {
-  font-size: 0.5em;
-  color: black;
-  line-height: 0;
-  text-transform: none;
-  letter-spacing: 0;
-  padding: 1.5em;
+#bodyDiv #abslouteContentContainer #top #acheivementDivContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#bodyDiv #abslouteContentContainer #top #acheivementDivContainer .singleAchivement .number {
+  font-size: 2.8em;
   font-weight: 900;
-  width: 2em;
-  border-color: black;
-  background-color: whitesmoke;
 }
-#header #authButtonDiv button span {
-  line-height: 0;
-  text-transform: none;
+#bodyDiv #abslouteContentContainer #top #acheivementDivContainer .singleAchivement .number + p {
+  color: rgb(171, 167, 167);
 }
-#header #navBar {
-  display: flex;
-  gap: 2vw;
-  align-items: center;
-  font-weight: 700;
+#bodyDiv #abslouteContentContainer #top #LargeTextDiv {
+  width: 40vw;
 }
-#header #navBar a {
-  color: rgb(206, 202, 202);
-  text-decoration: none;
+#bodyDiv #abslouteContentContainer #top #LargeTextDiv p {
+  font-size: 3.5em;
+  font-weight: 900;
+  text-align: center;
 }
-#header #navBar .navLinks:hover {
-  color: white;
+#bodyDiv #abslouteContentContainer #top #paragraph {
+  width: 15vw;
+  text-align: center;
+  align-self: center;
+}
+#bodyDiv #abslouteContentContainer #callToActionDiv button {
+  background-color: aquamarine;
+  border: 0.11em green solid;
+  color: rgb(255, 255, 255);
+}
+#bodyDiv #abslouteContentContainer * {
+  z-index: 20;
+}
+#bodyDiv #model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (orientation: landscape) {
+  #header {
+    margin: 1.5em 3em;
+    justify-content: space-between;
+  }
+  #header #authenticator {
+    display: flex;
+  }
+  #header #authenticator #userDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #header #authButtonDiv {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+  }
+  #header #authButtonDiv button {
+    font-size: 0.5em;
+    color: black;
+    line-height: 0;
+    text-transform: none;
+    letter-spacing: 0;
+    padding: 1.5em;
+    font-weight: 900;
+    width: 2em;
+    border-color: black;
+    background-color: whitesmoke;
+  }
+  #header #authButtonDiv button span {
+    line-height: 0;
+    text-transform: none;
+  }
+  #header #navBar {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    font-weight: 700;
+  }
+  #header #navBar a {
+    color: rgb(206, 202, 202);
+    text-decoration: none;
+  }
+  #header #navBar .navLinks:hover {
+    color: white;
+  }
+  #header #menu {
+    display: none;
+  }
 }/*# sourceMappingURL=component.css.map */
