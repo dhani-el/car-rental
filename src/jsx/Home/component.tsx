@@ -1,10 +1,15 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { Button } from "@mui/material";
 import {User} from 'react-feather';
 import Swipe from "@mui/icons-material/Swipe";
 import ViewList from '@mui/icons-material/ViewList';
 import {Close} from '@mui/icons-material';
 import {motion} from 'framer-motion';
+import { Canvas, useLoader} from '@react-three/fiber';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls, MeshReflectorMaterial, PerspectiveCamera } from '@react-three/drei';
+// import {  SpotLight } from '@react-three/drei/core/SpotLight.js';
+import {LinearEncoding, RepeatWrapping, TextureLoader} from 'three';
 import '../../Styles/Home/component.css';
 
 type authProp =  {
@@ -96,51 +101,112 @@ function MenuBody({isOpen} : menuProp):JSX.Element{
 }
 
 export function Body():JSX.Element{
-    return <div>
-                <LargeText/>
-                <AchivementText/>
+    return <div id = "bodyDiv">
+                <div id='abslouteContentContainer'>
+                    <div id='top'>
+                        <AchivementText/>
+                        <LargeText/>
+                        <Paragraph/>
+                    </div>
+                    <CallToAction/>
+                </div>
                 <Modelo/>
-                <CallToAction/>
-                <Paragraph/>
             </div>
 }
 
-function LargeText():JSX.Element{
-    return <div>
-        <h2>RENT PERFORMANCE CARS</h2>
-    </div>
-}
-
 function AchivementText():JSX.Element{
-    return <div>
-        <span>
-            <p>100+ CARS</p>
-            <p>7K+ CLIENTS</p>
-        </span>
+    return <div id='acheivementDivContainer'>
+            <span className='singleAchivement'>
+                <p className='number'>100+</p>
+                <p>Types of Cars</p>
+            </span>
+            <span className='singleAchivement'>
+                <p className='number'>7K+</p>
+                <p>Clients Served</p>
+            </span>
     </div>
 }
 
-function CallToAction():JSX.Element{
-    return <div>
-            <Button>RENT NOW</Button>
-        </div>
+function LargeText():JSX.Element{
+    return <div id = "LargeTextDiv">
+        <p>RENT PERFORMANCE CARS</p>
+    </div>
 }
 
 function Paragraph():JSX.Element{
-    return <div>
+    return <div id = "paragraph" >
         <p>
             we desire our customers to have a hassel free experience hence we make it easy to rent a car by providing a variety of cars, verified car owners and car rental delivery and pickup
         </p>
     </div>
 }
 
+function CallToAction():JSX.Element{
+    return <div id='callToActionDiv' >
+            <Button variant='contained' >RENT NOW</Button>
+        </div>
+}
+
 function Modelo():JSX.Element{
-    return <div>
-        <canvas>
-        </canvas>
+    return <div id='model'>
+        <Canvas shadows >
+            <ambientLight intensity = {2} color={"white"} />
+            <directionalLight/>
+            {/* <HomeCarModel  /> */}
+            {/* <Ground/> */}
+        </Canvas>
         <SpinIndicator/>
     </div>
 }
+
+// function HomeCarModel():JSX.Element{
+//     const Scene = useLoader(GLTFLoader,'/three.glb');
+//     return <>
+//                 <OrbitControls target={[0,0.35,0]}  maxPolarAngle={1.45} />
+//                 <PerspectiveCamera makeDefault fov={50} position={[3,2,5]} />
+//                 <color args={[0,0,0]} attach= 'background' />
+//                 <mesh receiveShadow = {true} castShadow={true} > 
+//                     <primitive  object={Scene.scene} rotation = {[0,3.15,0]} scale = {[0.12,0.12,0.12]} position = {[0,2.5,0]}  receiveShadow = {true} castShadow={true} />
+//                 </mesh>
+//             </>
+// }
+
+// function Ground():JSX.Element{
+//     const [normal, roughness] = useLoader(TextureLoader, ["/texture/rough.jpg","/texture/normal.jpg"]);
+
+//     useEffect(function(){
+//         [normal,roughness].forEach(function(map){
+//             map.wrapS = RepeatWrapping;
+//             map.wrapT = RepeatWrapping;
+//             map.repeat.set(5,5);
+//         });
+//         normal.encoding = LinearEncoding;
+//     }, [normal,roughness]);
+
+//     return <mesh rotation-x = {-Math.PI * 0.5} castShadow receiveShadow >
+//                 <planeGeometry args={[30,30]} />
+//                 <MeshReflectorMaterial 
+//                 envMapIntensity={0}
+//                 normalMap={normal}
+//                 // normalScale = {[0.15]}
+//                 roughnessMap={roughness}
+//                 dithering = {true}
+//                 color={[0.015,0.015,0.015]}
+//                 roughness={0.7}
+//                 blur={[1000,400]}
+//                 mixBlur={30}
+//                 mixStrength={80}
+//                 mixContrast={1}
+//                 resolution={1024}
+//                 mirror={0}
+//                 depthScale={0.01}
+//                 minDepthThreshold={0.9}
+//                 // debug = {0}
+//                 maxDepthThreshold={1}
+//                 depthToBlurRatioBias={0.25}
+//                 reflectorOffset={0.2}/>
+//             </mesh>
+// }
 
 function SpinIndicator():JSX.Element{
     return <div>
