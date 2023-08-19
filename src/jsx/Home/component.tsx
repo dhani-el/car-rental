@@ -152,61 +152,61 @@ function Modelo():JSX.Element{
         <Canvas shadows >
             <ambientLight intensity = {2} color={"white"} />
             <directionalLight/>
-            {/* <HomeCarModel  /> */}
-            {/* <Ground/> */}
+            <HomeCarModel  />
+            <Ground/>
         </Canvas>
         <SpinIndicator/>
     </div>
 }
 
-// function HomeCarModel():JSX.Element{
-//     const Scene = useLoader(GLTFLoader,'/three.glb');
-//     return <>
-//                 <OrbitControls target={[0,0.35,0]}  maxPolarAngle={1.45} />
-//                 <PerspectiveCamera makeDefault fov={50} position={[3,2,5]} />
-//                 <color args={[0,0,0]} attach= 'background' />
-//                 <mesh receiveShadow = {true} castShadow={true} > 
-//                     <primitive  object={Scene.scene} rotation = {[0,3.15,0]} scale = {[0.12,0.12,0.12]} position = {[0,2.5,0]}  receiveShadow = {true} castShadow={true} />
-//                 </mesh>
-//             </>
-// }
+function HomeCarModel():JSX.Element{
+    const Scene = useLoader(GLTFLoader,'/three.glb');
+    return <>
+                <OrbitControls target={[0,0.35,0]}  maxPolarAngle={1.45} />
+                <PerspectiveCamera makeDefault fov={50} position={[3,2,5]} />
+                <color args={[0,0,0]} attach= 'background' />
+                <mesh receiveShadow = {true} castShadow={true} > 
+                    <primitive  object={Scene.scene} rotation = {[0,3.15,0]} scale = {[0.12,0.12,0.12]} position = {[0,2.5,0]}  receiveShadow = {true} castShadow={true} />
+                </mesh>
+            </>
+}
 
-// function Ground():JSX.Element{
-//     const [normal, roughness] = useLoader(TextureLoader, ["/texture/rough.jpg","/texture/normal.jpg"]);
+function Ground():JSX.Element{
+    const [normal, roughness] = useLoader(TextureLoader, ["/texture/rough.jpg","/texture/normal.jpg"]);
 
-//     useEffect(function(){
-//         [normal,roughness].forEach(function(map){
-//             map.wrapS = RepeatWrapping;
-//             map.wrapT = RepeatWrapping;
-//             map.repeat.set(5,5);
-//         });
-//         normal.encoding = LinearEncoding;
-//     }, [normal,roughness]);
+    useEffect(function(){
+        [normal,roughness].forEach(function(map){
+            map.wrapS = RepeatWrapping;
+            map.wrapT = RepeatWrapping;
+            map.repeat.set(5,5);
+        });
+        normal.encoding = LinearEncoding;
+    }, [normal,roughness]);
 
-//     return <mesh rotation-x = {-Math.PI * 0.5} castShadow receiveShadow >
-//                 <planeGeometry args={[30,30]} />
-//                 <MeshReflectorMaterial 
-//                 envMapIntensity={0}
-//                 normalMap={normal}
-//                 // normalScale = {[0.15]}
-//                 roughnessMap={roughness}
-//                 dithering = {true}
-//                 color={[0.015,0.015,0.015]}
-//                 roughness={0.7}
-//                 blur={[1000,400]}
-//                 mixBlur={30}
-//                 mixStrength={80}
-//                 mixContrast={1}
-//                 resolution={1024}
-//                 mirror={0}
-//                 depthScale={0.01}
-//                 minDepthThreshold={0.9}
-//                 // debug = {0}
-//                 maxDepthThreshold={1}
-//                 depthToBlurRatioBias={0.25}
-//                 reflectorOffset={0.2}/>
-//             </mesh>
-// }
+    return <mesh rotation-x = {-Math.PI * 0.5} castShadow receiveShadow >
+                <planeGeometry args={[30,30]} />
+                <MeshReflectorMaterial 
+                envMapIntensity={0}
+                normalMap={normal}
+                // normalScale = {[0.15]}
+                roughnessMap={roughness}
+                dithering = {true}
+                color={[0.015,0.015,0.015]}
+                roughness={0.7}
+                blur={[1000,400]}
+                mixBlur={30}
+                mixStrength={80}
+                mixContrast={1}
+                resolution={1024}
+                mirror={0}
+                depthScale={0.01}
+                minDepthThreshold={0.9}
+                // debug = {0}
+                maxDepthThreshold={1}
+                depthToBlurRatioBias={0.25}
+                reflectorOffset={0.2}/>
+            </mesh>
+}
 
 function SpinIndicator():JSX.Element{
     return <div>
