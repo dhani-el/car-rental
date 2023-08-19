@@ -7,8 +7,10 @@
 
 *::-webkit-scrollbar-thumb{
     width: 0;
+    height: 0;
 }
 *::-webkit-scrollbar-track{
+    height: 0;
     width: 0;
 }
 
@@ -47,6 +49,73 @@
             position: relative;
             z-index: 11;
         }
+    }
+}
+
+#bodyDiv{
+    position: relative;
+    #abslouteContentContainer{
+        // border: 2px white solid ;
+        position: relative;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 82vh;
+        #top{
+            display: flex;
+            width: 100vw;
+            height: 40vh;
+            padding: 0 3.5em;
+            padding-top: 2em;
+            justify-content: space-between;
+            #acheivementDivContainer{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                .singleAchivement{
+                    .number{
+                        font-size: 2.8em;
+                        font-weight: 900;
+                    }
+                    .number + p{
+                        color: rgb(171, 167, 167);
+                    }
+                }
+            }
+            #LargeTextDiv{
+                width:40vw;
+                p{
+                    font-size: 3.5em;
+                    font-weight: 900;
+                    text-align: center;
+                }
+            }
+            #paragraph{
+                width: 15vw;
+                text-align: center;
+                align-self: center;
+            }
+        }
+        #callToActionDiv{
+            button{
+                background-color: aquamarine;
+                border: 0.11em green solid;
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
+    #abslouteContentContainer *{
+        z-index: 20;
+    }
+    #model{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 

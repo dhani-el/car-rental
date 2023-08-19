@@ -6,9 +6,11 @@
 
 *::-webkit-scrollbar-thumb {
   width: 0;
+  height: 0;
 }
 
 *::-webkit-scrollbar-track {
+  height: 0;
   width: 0;
 }
 
@@ -45,6 +47,68 @@
 #header #menu .menuIcons {
   position: relative;
   z-index: 11;
+}
+
+#bodyDiv {
+  position: relative;
+}
+#bodyDiv #abslouteContentContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 82vh;
+}
+#bodyDiv #abslouteContentContainer #top {
+  display: flex;
+  width: 100vw;
+  height: 40vh;
+  padding: 0 3.5em;
+  padding-top: 2em;
+  justify-content: space-between;
+}
+#bodyDiv #abslouteContentContainer #top #acheivementDivContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#bodyDiv #abslouteContentContainer #top #acheivementDivContainer .singleAchivement .number {
+  font-size: 2.8em;
+  font-weight: 900;
+}
+#bodyDiv #abslouteContentContainer #top #acheivementDivContainer .singleAchivement .number + p {
+  color: rgb(171, 167, 167);
+}
+#bodyDiv #abslouteContentContainer #top #LargeTextDiv {
+  width: 40vw;
+}
+#bodyDiv #abslouteContentContainer #top #LargeTextDiv p {
+  font-size: 3.5em;
+  font-weight: 900;
+  text-align: center;
+}
+#bodyDiv #abslouteContentContainer #top #paragraph {
+  width: 15vw;
+  text-align: center;
+  align-self: center;
+}
+#bodyDiv #abslouteContentContainer #callToActionDiv button {
+  background-color: aquamarine;
+  border: 0.11em green solid;
+  color: rgb(255, 255, 255);
+}
+#bodyDiv #abslouteContentContainer * {
+  z-index: 20;
+}
+#bodyDiv #model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media (orientation: landscape) {
