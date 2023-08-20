@@ -51,49 +51,57 @@
 
 #bodyDiv {
   position: relative;
+  height: 90vh;
 }
 #bodyDiv #abslouteContentContainer {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 90vh;
 }
 #bodyDiv #abslouteContentContainer #top {
+  width: 100%;
+  position: relative;
   display: flex;
-  width: 100vw;
-  height: 40vh;
-  padding: 0 3.5em;
-  padding-top: 2em;
-  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 #bodyDiv #abslouteContentContainer #top #acheivementDivContainer {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 4em;
+  position: absolute;
+  top: 50vh;
 }
 #bodyDiv #abslouteContentContainer #top #acheivementDivContainer .singleAchivement .number {
-  font-size: 2.8em;
-  font-weight: 900;
+  font-size: 2em;
+  font-weight: 700;
 }
 #bodyDiv #abslouteContentContainer #top #acheivementDivContainer .singleAchivement .number + p {
   color: rgb(171, 167, 167);
 }
 #bodyDiv #abslouteContentContainer #top #LargeTextDiv {
-  width: 40vw;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 10vh;
 }
 #bodyDiv #abslouteContentContainer #top #LargeTextDiv p {
-  font-size: 3.5em;
-  font-weight: 900;
+  font-size: 2.8em;
+  font-weight: 700;
   text-align: center;
 }
 #bodyDiv #abslouteContentContainer #top #paragraph {
-  width: 15vw;
   text-align: center;
-  align-self: center;
+  padding: 1em;
+  position: absolute;
+  top: 58vh;
+}
+#bodyDiv #abslouteContentContainer #callToActionDiv {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 #bodyDiv #abslouteContentContainer #callToActionDiv button {
   background-color: aquamarine;
@@ -102,12 +110,14 @@
   color: rgb(0, 0, 0);
   font-family: "Courier New", Courier, monospace;
   padding: none;
+  position: absolute;
+  top: 80vh;
 }
 #bodyDiv #abslouteContentContainer #callToActionDiv button * {
   padding: none;
 }
 #bodyDiv #abslouteContentContainer * {
-  z-index: 20;
+  z-index: 9;
 }
 #bodyDiv #model {
   position: absolute;
@@ -120,6 +130,28 @@
   position: relative;
   bottom: 40%;
   left: 50%;
+}
+
+#footerContainer {
+  margin-top: 2em;
+  height: 35vh;
+  width: 100vw;
+  background-color: rgb(28, 28, 28);
+}
+#footerContainer #logo {
+  color: rgb(158, 158, 158);
+  margin-left: 3em;
+}
+#footerContainer #quickLinks {
+  display: flex;
+  width: 100%;
+  height: 70%;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2em;
+}
+#footerContainer #quickLinks a {
+  width: 30vw;
 }
 
 @media (orientation: landscape) {
@@ -171,5 +203,60 @@
   }
   #header #menu {
     display: none;
+  }
+  #bodyDiv #abslouteContentContainer {
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    height: 90vh;
+  }
+  #bodyDiv #abslouteContentContainer #top {
+    display: flex;
+    width: 100vw;
+    height: 40vh;
+    padding: 0 3.5em;
+    padding-top: 2em;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  #bodyDiv #abslouteContentContainer #top #acheivementDivContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: static;
+  }
+  #bodyDiv #abslouteContentContainer #top #acheivementDivContainer .singleAchivement .number {
+    font-size: 2.8em;
+    font-weight: 900;
+  }
+  #bodyDiv #abslouteContentContainer #top #acheivementDivContainer .singleAchivement .number + p {
+    color: rgb(171, 167, 167);
+  }
+  #bodyDiv #abslouteContentContainer #top #LargeTextDiv {
+    width: 40vw;
+    position: static;
+  }
+  #bodyDiv #abslouteContentContainer #top #LargeTextDiv p {
+    font-size: 3.5em;
+    font-weight: 900;
+  }
+  #bodyDiv #abslouteContentContainer #top #paragraph {
+    width: 15vw;
+    padding: 0;
+    align-self: center;
+    position: static;
+  }
+  #bodyDiv #model {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #bodyDiv #model #spinIndicator {
+    position: relative;
+    bottom: 40%;
+    left: 50%;
   }
 }/*# sourceMappingURL=component.css.map */
