@@ -10,6 +10,7 @@ import { Canvas, useLoader} from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls, MeshReflectorMaterial, PerspectiveCamera } from '@react-three/drei';
 import {LinearEncoding, RepeatWrapping, TextureLoader} from 'three';
+import { useMediaQuery } from 'react-responsive';
 import '../../Styles/Home/component.css';
 
 type authProp =  {
@@ -101,11 +102,13 @@ function MenuBody({isOpen} : menuProp):JSX.Element{
 }
 
 export function Body():JSX.Element{
+    const isLandScape  = useMediaQuery({query: '(orientation:landscape)'});
     return <div id = "bodyDiv">
                 <div id='abslouteContentContainer'>
                     <div id='top'>
-                        <AchivementText/>
+                    {isLandScape && <AchivementText/>}
                         <LargeText/>
+                        {!isLandScape && <AchivementText/>}
                         <Paragraph/>
                     </div>
                     <CallToAction/>
@@ -172,13 +175,15 @@ function Modelo():JSX.Element{
 }
 
 function HomeCarModel():JSX.Element{
+    const isLandScape  = useMediaQuery({query: '(orientation:landscape)'});
+    const scale  = isLandScape ? ([0.005,0.005,0.005]) : ([0.0020,0.0020,0.0020])
     const Scene = useLoader(GLTFLoader,'/lambo.glb');
     return <>
                 <OrbitControls target={[0,0.35,0]}  maxPolarAngle={1.45} enablePan = {false} enableZoom = {false} />
                 <PerspectiveCamera makeDefault fov={50} position={[3,2,5]} />
                 <color args={[0,0,0]} attach= 'background' />
                 <mesh receiveShadow = {true} castShadow={true} > 
-                    <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {[0.005,0.005,0.005]} position = {[1,1,1.2]}  receiveShadow = {true} castShadow={true} />
+                    <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {scale} position = {[1,1,1.2]}  receiveShadow = {true} castShadow={true} />
                     {/* <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {[0.005,0.005,0.005]} position = {[1,1,1.2]}  receiveShadow = {true} castShadow={true} /> */}
                 </mesh>
             </>
