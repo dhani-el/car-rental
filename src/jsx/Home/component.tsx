@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
 // import {useState, useEffect, useRef} from 'react';
 import { Button } from "@mui/material";
 import {User} from 'react-feather';
@@ -148,14 +148,15 @@ function CallToAction():JSX.Element{
 }
 
 function Modelo():JSX.Element{
-    // const spinIndicatorRef = useRef(null);
+    // comment the  ref line and function 
+    const spinIndicatorRef = useRef(null);
 
-    // function removeSpinIndicator():void{
-    //     if(spinIndicatorRef.current !== null ){
-    //         spinIndicatorRef.current.style.display = "none"
-    //         return
-    //     }
-    // }
+    function removeSpinIndicator():void{
+        if(spinIndicatorRef.current !== null ){
+            spinIndicatorRef.current.style.display = "none"
+            return
+        }
+    }
     return <div id='model' onClick={removeSpinIndicator}>
         <Canvas shadows >
             <ambientLight intensity = {1} color={"white"} />
@@ -220,14 +221,27 @@ function Ground():JSX.Element{
             </mesh>
 }
 
-function SpinIndicator():JSX.Element{
-    return <div id='spinIndicator'>
-                <Swipe/>
-           </div>
-}
+// function SpinIndicator():JSX.Element{
+//     return <div id='spinIndicator'>
+//                 <Swipe/>
+//            </div>
+// }
 
 export function Footer():JSX.Element{
-    return <div>
+    return <div id='footerContainer'>
+        <Logo/>
+        <div id='quickLinks'>
+            <a>Home</a>
+            <a>Dealers</a>
+            <a>Branches</a>
+            <a>Rent a Car</a>
+            <a>Pick Up</a>
+            <a>Contact Us</a>
+            <a>Careers</a>
+            <a>Credits</a>
+        </div>
+        <div id='boilerPlateContent' >
 
+        </div>
     </div>
 }
