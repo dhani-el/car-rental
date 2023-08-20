@@ -1,5 +1,4 @@
-import {useState, useEffect} from 'react';
-// import {useState, useEffect, useRef} from 'react';
+import {useState, useEffect, useRef} from 'react';
 import { Button } from "@mui/material";
 import {User} from 'react-feather';
 import Swipe from "@mui/icons-material/Swipe";
@@ -148,25 +147,25 @@ function CallToAction():JSX.Element{
 }
 
 function Modelo():JSX.Element{
-    // const spinIndicatorRef = useRef(null);
+    const spinIndicatorRef = useRef(null);
 
-    // function removeSpinIndicator():void{
-    //     if(spinIndicatorRef.current !== null ){
-    //         spinIndicatorRef.current.style.display = "none"
-    //         return
-    //     }
-    // }
+    function removeSpinIndicator():void{
+        if(spinIndicatorRef.current !== null ){
+            spinIndicatorRef.current.style.display = "none"
+            return
+        }
+    }
     return <div id='model' onClick={removeSpinIndicator}>
         <Canvas shadows >
             <ambientLight intensity = {1} color={"white"} />
             <directionalLight intensity={1}  position={[0,5,0]} />
-            {/* <spotLight color={"white"} angle={0.15} distance={8} intensity={40} penumbra={10} position={[0,3,0]} /> */}
+            <spotLight color={"white"} angle={0.15} distance={8} intensity={40} penumbra={10} position={[0,3,0]} />
             <HomeCarModel  />
             <Ground/>
         </Canvas>
-        {/* <div id='spinIndicator' ref={spinIndicatorRef} >
+        <div id='spinIndicator' ref={spinIndicatorRef} >
                 <Swipe/>
-           </div> */}
+           </div>
     </div>
 }
 
@@ -177,8 +176,7 @@ function HomeCarModel():JSX.Element{
                 <PerspectiveCamera makeDefault fov={50} position={[3,2,5]} />
                 <color args={[0,0,0]} attach= 'background' />
                 <mesh receiveShadow = {true} castShadow={true} > 
-                    <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {[0.005,0.005,0.005]} position = {[1,1,1.2]}  receiveShadow = {true} castShadow={true} />
-                    {/* <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {[0.005,0.005,0.005]} position = {[1,1,1.2]}  receiveShadow = {true} castShadow={true} /> */}
+                    <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {[0.005,0.005,0.005]} position = {[1,1,1.2]}  receiveShadow = {true}  />
                 </mesh>
             </>
 }
@@ -218,12 +216,6 @@ function Ground():JSX.Element{
                 depthToBlurRatioBias={0.25}
                 reflectorOffset={0.2}/>
             </mesh>
-}
-
-function SpinIndicator():JSX.Element{
-    return <div id='spinIndicator'>
-                <Swipe/>
-           </div>
 }
 
 export function Footer():JSX.Element{
