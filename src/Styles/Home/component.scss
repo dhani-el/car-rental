@@ -62,7 +62,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        height: 82vh;
+        height: 90vh;
         #top{
             display: flex;
             width: 100vw;
@@ -102,8 +102,14 @@
         #callToActionDiv{
             button{
                 background-color: aquamarine;
-                border: 0.11em green solid;
-                color: rgb(255, 255, 255);
+                border: 0.11em rgb(148, 244, 23) solid;
+                box-shadow: 2px 2px;
+                color: rgb(0, 0, 0);
+                font-family: 'Courier New', Courier, monospace;
+                padding: none;
+            }
+            button * {
+                padding: none;
             }
         }
     }
@@ -116,6 +122,11 @@
         left: 0;
         width: 100%;
         height: 100%;
+        #spinIndicator{
+            position: relative;
+            bottom: 40%;
+            left:50%;
+        }
     }
 }
 

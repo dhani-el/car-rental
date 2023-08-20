@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+// import {useState, useEffect, useRef} from 'react';
 import { Button } from "@mui/material";
 import {User} from 'react-feather';
 import Swipe from "@mui/icons-material/Swipe";
@@ -8,7 +9,6 @@ import {motion} from 'framer-motion';
 import { Canvas, useLoader} from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls, MeshReflectorMaterial, PerspectiveCamera } from '@react-three/drei';
-// import {  SpotLight } from '@react-three/drei/core/SpotLight.js';
 import {LinearEncoding, RepeatWrapping, TextureLoader} from 'three';
 import '../../Styles/Home/component.css';
 
@@ -148,25 +148,37 @@ function CallToAction():JSX.Element{
 }
 
 function Modelo():JSX.Element{
-    return <div id='model'>
+    // const spinIndicatorRef = useRef(null);
+
+    // function removeSpinIndicator():void{
+    //     if(spinIndicatorRef.current !== null ){
+    //         spinIndicatorRef.current.style.display = "none"
+    //         return
+    //     }
+    // }
+    return <div id='model' onClick={removeSpinIndicator}>
         <Canvas shadows >
-            <ambientLight intensity = {2} color={"white"} />
-            <directionalLight/>
+            <ambientLight intensity = {1} color={"white"} />
+            <directionalLight intensity={1}  position={[0,5,0]} />
+            {/* <spotLight color={"white"} angle={0.15} distance={8} intensity={40} penumbra={10} position={[0,3,0]} /> */}
             <HomeCarModel  />
             <Ground/>
         </Canvas>
-        <SpinIndicator/>
+        {/* <div id='spinIndicator' ref={spinIndicatorRef} >
+                <Swipe/>
+           </div> */}
     </div>
 }
 
 function HomeCarModel():JSX.Element{
-    const Scene = useLoader(GLTFLoader,'/three.glb');
+    const Scene = useLoader(GLTFLoader,'/lambo.glb');
     return <>
-                <OrbitControls target={[0,0.35,0]}  maxPolarAngle={1.45} />
+                <OrbitControls target={[0,0.35,0]}  maxPolarAngle={1.45} enablePan = {false} enableZoom = {false} />
                 <PerspectiveCamera makeDefault fov={50} position={[3,2,5]} />
                 <color args={[0,0,0]} attach= 'background' />
                 <mesh receiveShadow = {true} castShadow={true} > 
-                    <primitive  object={Scene.scene} rotation = {[0,3.15,0]} scale = {[0.12,0.12,0.12]} position = {[0,2.5,0]}  receiveShadow = {true} castShadow={true} />
+                    <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {[0.005,0.005,0.005]} position = {[1,1,1.2]}  receiveShadow = {true} castShadow={true} />
+                    {/* <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {[0.005,0.005,0.005]} position = {[1,1,1.2]}  receiveShadow = {true} castShadow={true} /> */}
                 </mesh>
             </>
 }
@@ -188,7 +200,7 @@ function Ground():JSX.Element{
                 <MeshReflectorMaterial 
                 envMapIntensity={0}
                 normalMap={normal}
-                // normalScale = {[0.15]}
+                // normalScale = {[0.15,0.15]}
                 roughnessMap={roughness}
                 dithering = {true}
                 color={[0.015,0.015,0.015]}
@@ -209,7 +221,7 @@ function Ground():JSX.Element{
 }
 
 function SpinIndicator():JSX.Element{
-    return <div>
+    return <div id='spinIndicator'>
                 <Swipe/>
            </div>
 }
