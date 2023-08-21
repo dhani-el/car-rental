@@ -11,6 +11,7 @@ import { OrbitControls, MeshReflectorMaterial, PerspectiveCamera } from '@react-
 import {LinearEncoding, RepeatWrapping, TextureLoader} from 'three';
 import { useMediaQuery } from 'react-responsive';
 import '../../Styles/Home/component.css';
+import LogoImage from '/one.png';
 
 type authProp =  {
     loggedIn:boolean
@@ -33,7 +34,7 @@ export function Header():JSX.Element{
 
 function Logo():JSX.Element{
     return <div id="logo">
-        <h1>ROSION</h1>
+        <img src={LogoImage} alt='lunder rentals logo' />
     </div>
 }
 
@@ -181,7 +182,7 @@ function HomeCarModel():JSX.Element{
                 <PerspectiveCamera makeDefault fov={50} position={[3,2,5]} />
                 <color args={[0,0,0]} attach= 'background' />
                 <mesh receiveShadow = {true} castShadow={true} > 
-                    <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {[0.005,0.005,0.005]} position = {[1,1,1.2]}  receiveShadow = {true}  />
+                    <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {scale} position = {[1,1,1.2]}  receiveShadow = {true}  />
                 </mesh>
             </>
 }
