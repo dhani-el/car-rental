@@ -12,6 +12,5 @@ export default function Auth():JSX.Element{
         <AuthSelector setFormFunction={setForm} form={form} />
         { (form == formType.Login) && <Login/>}
         { (form == formType.SIGNUP) &&  <SignUp/>}
-       
     </div>
 }

@@ -30,4 +30,32 @@
 }
 #authPageContainer #authSelectorContainer #signUpButtonSpan {
   left: 10%;
+}
+#authPageContainer .formDiv {
+  position: absolute;
+  top: 25vh;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#authPageContainer .formDiv .form {
+  width: 80%;
+}
+#authPageContainer .formDiv .form .card {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 2em;
+}
+#authPageContainer .formDiv .form .card button {
+  display: block;
+  background-color: aquamarine;
+  color: navy;
+  font-family: monospace;
+}
+#authPageContainer .formDiv .form .card #formLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
 }/*# sourceMappingURL=component.css.map */
