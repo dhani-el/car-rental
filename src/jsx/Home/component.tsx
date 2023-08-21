@@ -10,6 +10,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls, MeshReflectorMaterial, PerspectiveCamera } from '@react-three/drei';
 import {LinearEncoding, RepeatWrapping, TextureLoader} from 'three';
 import { useMediaQuery } from 'react-responsive';
+import { Link } from 'react-router-dom';
 import '../../Styles/Home/component.css';
 import LogoImage from '/one.png';
 
@@ -40,16 +41,16 @@ function Logo():JSX.Element{
 
 function NavBar():JSX.Element{
     return <div id="navBar" >
-            <a href="#" className="navLinks">Shop</a>
-            <a href="#" className="navLinks">Rent</a>
-            <a href="#" className="navLinks">Dealer</a>
-            <a href="#" className="navLinks">More</a>
+            <Link to="/shop"  className="navLinks" > Shop</Link>
+            <Link to="/rent" className="navLinks"  >Rent</Link>
+            <Link to="/dealers"  className="navLinks" >Dealers</Link>
+            <Link to="/more"  className="navLinks" >More</Link>
     </div>
 }
 
 function Authenticator(loginProp:authProp):JSX.Element{
     return <div id="authenticator" >
-        {loginProp.loggedIn ? <UserComponent name="daniel" /> : <AuthButton/> }
+        {loginProp.loggedIn ? <UserComponent name="omotayo" /> : <AuthButton/> }
     </div>
 }
 
@@ -62,8 +63,8 @@ function UserComponent(user:userProp): JSX.Element{
 
 function AuthButton():JSX.Element{
     return <div id="authButtonDiv">
-                <Button variant="outlined" id="loginButton">LOG IN</Button> 
-                <Button variant="outlined" id="signupButton">SIGN UP</Button>
+                <Link to='/auth'><Button variant="outlined" id="loginButton">LOG IN</Button> </Link>
+                <Link to='/auth'><Button variant="outlined" id="signupButton">SIGN UP</Button> </Link>
     </div>
 }
 
@@ -94,10 +95,10 @@ function MenuBody({isOpen} : menuProp):JSX.Element{
         }
     }
     return <motion.div initial = "initial" animate = {isOpen?"open" : "initial"} variants={menuBodyAnim} id="menuBody">
-            <a href="#" className="navLinks">Shop</a>
-            <a href="#" className="navLinks">Rent</a>
-            <a href="#" className="navLinks">Dealer</a>
-            <a href="#" className="navLinks">More</a>
+            <Link to="/shop"  className="navLinks" > Shop</Link>
+            <Link to="/rent" className="navLinks"  >Rent</Link>
+            <Link to="/dealers"  className="navLinks" >Dealers</Link>
+            <Link to="/more"  className="navLinks" >More</Link>
             </motion.div>
 }
 
@@ -146,7 +147,7 @@ function Paragraph():JSX.Element{
 
 function CallToAction():JSX.Element{
     return <div id='callToActionDiv' >
-            <Button variant='contained' >RENT NOW</Button>
+            <Link to='/rent' ><Button variant='contained' >RENT NOW</Button></Link>
         </div>
 }
 
@@ -228,14 +229,14 @@ export function Footer():JSX.Element{
     return <div id='footerContainer'>
         <Logo/>
         <div id='quickLinks'>
-            <a>Home</a>
-            <a>Dealers</a>
-            <a>Branches</a>
-            <a>Rent a Car</a>
-            <a>Pick Up</a>
-            <a>Contact Us</a>
-            <a>Careers</a>
-            <a>Credits</a>
+            <Link to='/'>Home</Link>
+            <Link to='/dealers'>Dealers</Link>
+            <Link to='/branches' >Branches</Link>
+            <Link to='/rent' >Rent a Car</Link>
+            <Link to='/delivery' >Pick Up</Link>
+            <Link to='/contact' >Contact Us</Link>
+            <Link to='/careers' >Careers</Link>
+            <Link to='/credit' >Credits</Link>
         </div>
         <div id='boilerPlateContent' >
 

@@ -136,6 +136,8 @@
 }
 #bodyDiv #model #spinIndicator {
   position: relative;
+  width: -moz-min-content;
+  width: min-content;
   bottom: 40%;
   left: 50%;
 }
