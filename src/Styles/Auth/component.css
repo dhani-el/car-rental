@@ -1,0 +1,33 @@
+#authPageContainer {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#authPageContainer #authSelectorContainer {
+  position: absolute;
+  width: 80%;
+  height: 7vh;
+  top: 10vh;
+  display: flex;
+  justify-content: space-between;
+}
+#authPageContainer #authSelectorContainer .singleAuthSelector {
+  display: inline-block;
+  height: 98%;
+  width: 45%;
+  position: relative;
+}
+#authPageContainer #authSelectorContainer .singleAuthSelector button {
+  font-family: monospace, "Courier New", Courier;
+  height: 100%;
+  width: 100%;
+}
+#authPageContainer #authSelectorContainer #logInButtonSpan {
+  left: -10%;
+}
+#authPageContainer #authSelectorContainer #signUpButtonSpan {
+  left: 10%;
+}/*# sourceMappingURL=component.css.map */
