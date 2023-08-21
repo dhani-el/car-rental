@@ -19,6 +19,7 @@
     display: flex;
     margin: 1.5em;
     justify-content: space-between;
+    align-items: center;
     #navBar{
         display: none;
     }
@@ -48,6 +49,13 @@
         .menuIcons{
             position: relative;
             z-index: 11;
+        }
+    }
+    #logo{
+        width: 8em;
+        img{
+            width: 100%;
+            height: auto;
         }
     }
 }
@@ -133,6 +141,7 @@
         height: 100%;
         #spinIndicator{
             position: relative;
+            width: min-content;
             bottom: 40%;
             left:50%;
         }
@@ -147,8 +156,13 @@
     width: 100vw;
     background-color: rgb(28, 28, 28);
     #logo{
-        color: rgb(158, 158, 158);
-        margin-left: 3em;
+        width: 8em;
+        margin-left: 2em;
+        img{
+            width: 100%;
+            height: auto;
+            opacity: 0.4;
+        }
     }
         #quickLinks{
             display: flex;
