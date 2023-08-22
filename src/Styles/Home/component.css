@@ -69,14 +69,16 @@
   justify-content: center;
 }
 #bodyDiv #abslouteContentContainer #callToActionDiv button {
-  background-color: aquamarine;
-  border: 0.11em rgb(148, 244, 23) solid;
-  box-shadow: 2px 2px;
+  background-color: rgb(148, 244, 23);
+  box-shadow: rgb(148, 244, 23) 4px 4px 6px 6px;
   color: rgb(0, 0, 0);
   font-family: "Courier New", Courier, monospace;
-  padding: none;
   position: absolute;
   top: 80vh;
+}
+#bodyDiv #abslouteContentContainer #callToActionDiv button a {
+  text-decoration: none;
+  color: black;
 }
 #bodyDiv #abslouteContentContainer #callToActionDiv button * {
   padding: none;
@@ -142,6 +144,9 @@
     padding: 0;
     align-self: center;
     position: static;
+  }
+  #bodyDiv #abslouteContentContainer #callToActionDiv button {
+    top: 70vh;
   }
   #bodyDiv #model {
     position: absolute;

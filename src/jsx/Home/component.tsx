@@ -56,7 +56,7 @@ function Paragraph():JSX.Element{
 
 function CallToAction():JSX.Element{
     return <div id='callToActionDiv' >
-            <Link to='/rent' ><Button variant='contained' >RENT NOW</Button></Link>
+            <Button variant='contained' ><Link to='/rent' ><p>RENT NOW</p></Link></Button>
         </div>
 }
 

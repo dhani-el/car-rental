@@ -70,14 +70,16 @@
         align-items: center;
         justify-content: center;
         button{
-            background-color: aquamarine;
-            border: 0.11em rgb(148, 244, 23) solid;
-            box-shadow: 2px 2px;
+            background-color: rgba(148, 244, 23) ;
+            box-shadow: rgba(148, 244, 23) 4px 4px 6px 6px;
             color: rgb(0, 0, 0);
             font-family: 'Courier New', Courier, monospace;
-            padding: none;
             position: absolute;
             top: 80vh;
+            a{
+                text-decoration: none;
+                color:black
+            }
         }
         button * {
             padding: none;
@@ -112,7 +114,6 @@
     #bodyDiv{
         
         #abslouteContentContainer{
-            // border: 2px white solid ;
             position: relative;
             justify-content: space-between;
             width: 100%;
@@ -154,6 +155,12 @@
                     padding: 0;
                     align-self: center;
                     position: static;
+                }
+            }
+
+            #callToActionDiv{
+                button{
+            top: 70vh;
                 }
             }
 

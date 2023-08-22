@@ -6,7 +6,7 @@
 
 #header {
   display: flex;
-  margin: 1.5em;
+  padding: 1em;
   justify-content: space-between;
   align-items: center;
 }
@@ -48,7 +48,6 @@
 }
 
 #footerContainer {
-  margin-top: 2em;
   height: 35vh;
   width: 100vw;
   background-color: rgb(28, 28, 28);
@@ -72,11 +71,13 @@
 }
 #footerContainer #quickLinks a {
   width: 30vw;
+  color: rgb(170, 170, 170);
+  text-decoration: none;
+  text-align: center;
 }
 
 @media (orientation: landscape) {
   #header {
-    margin: 1.5em 3em;
     justify-content: space-between;
   }
   #header #authenticator {
