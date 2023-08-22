@@ -1,0 +1,41 @@
+
+
+#searchComponentContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    #searchComponentCard{
+        width: 80%;
+        display: flex;
+        padding: 1em;
+        justify-content: space-between;
+        #searchComponentTextContainer{
+            h2{
+                display: inline;
+            }
+            p{
+                display: inline;
+            }
+        }
+        #searchBar{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 1em;
+            .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+                padding: 0.2em;
+                width: 80%;
+            }
+            .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+                width: 90%;
+            }
+        }
+    }
+}
+
+// chika.
+// telesales agent.
+// 0817 763 8359.
