@@ -1,7 +1,9 @@
 
 import Home from './Home/home';
 import Auth from './Auth/auth';
+import Rent from './Rent/index';
 import Layout from './Layout/layout';
+
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 
@@ -19,6 +21,10 @@ const route  = createBrowserRouter([
           path:'/auth',
           element:<Auth/>
         },
+        {
+          path:'/rent',
+          element:<Rent/>
+        }
       ]
     },
 

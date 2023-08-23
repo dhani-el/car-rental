@@ -1,0 +1,33 @@
+#searchComponentContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+}
+#searchComponentContainer #searchComponentCard {
+  width: 80%;
+  display: flex;
+  padding: 1em;
+  justify-content: space-between;
+}
+#searchComponentContainer #searchComponentCard #searchComponentTextContainer h2 {
+  display: inline;
+}
+#searchComponentContainer #searchComponentCard #searchComponentTextContainer p {
+  display: inline;
+}
+#searchComponentContainer #searchComponentCard #searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1em;
+}
+#searchComponentContainer #searchComponentCard #searchBar .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 0.2em;
+  width: 80%;
+}
+#searchComponentContainer #searchComponentCard #searchBar .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 90%;
+}/*# sourceMappingURL=component.css.map */
