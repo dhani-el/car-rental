@@ -36,6 +36,95 @@
     }
 }
 
-// chika.
-// telesales agent.
-// 0817 763 8359.
+#brandsContainer{
+    width: 100%;
+    height:10vh;
+    h2{
+        color: black;
+    }
+    #brandsSwiperContainer{
+        height: 100%;
+        #slideR{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #abrandDiv{
+            height: 10vh;
+            width: 25vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 1em;
+            img{
+                height: auto;
+                width: 25vw;
+            }
+        }
+    }
+}
+
+#carsContainer{
+    #listOfCars{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.2vh;
+        #Acar{
+            width: 95%;
+
+            .aCarCard{
+                #firstDiv{
+                    width: 100vw;
+                    height: 5vh;
+                    display: flex;
+                    justify-content: space-around;
+                    margin-bottom: 0.5em;
+                    img{
+                        width: auto;
+                        height: 100%;
+                    }
+                    #textDiv{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        p{
+                            color: gray;
+                        }
+                    }
+                }
+                #secondDiv{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-left: 1.5em;
+                    align-items: flex-end;
+                    #priceSpan{
+                        display: flex;
+                        #price{
+                            font-weight: 900;
+                            margin-bottom: 0.5em;
+                        }
+                        #price + p{
+                            color: gray;
+                        }
+                    }
+                    #detailsSpan{
+                        background-color: aquamarine;
+                        padding: 0.8em;
+                        border-top-left-radius: 0.5em;
+                        border-bottom-right-radius: 0.5em;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 55%;
+                        a{
+                            text-decoration: none;
+                            color: white;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

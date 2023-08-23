@@ -2,12 +2,21 @@ import {useState} from 'react';
 import { TextField, Card } from "@mui/material";
 import { Search, Close } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 import 'swiper/css'
 import '../../Styles/Rent/component.css';
 
 
 type searchType = {
     handleClickFunction: Function
+}
+
+type brandType  = {
+    brands : any[]
+}
+
+type carsType = {
+    ListOfCars : any[]
 }
 
 export function SearchComponent():JSX.Element{
@@ -29,28 +38,56 @@ export function SearchComponent():JSX.Element{
 
 function SearchBar({handleClickFunction}:searchType):JSX.Element{
     return <div id="searchBar">
-        <TextField /> 
+        <TextField placeholder='Car brand' /> 
         <Close onClick = {()=>handleClickFunction()} />
     </div>
 }
 
-type brandType  = {
-    brands : any[]
-}
-
 export function Brands({brands}:brandType):JSX.Element{
     return <div id='brandsContainer'>
-        <h1>Brands</h1>
+        <h2>Brands</h2>
         <div id='brandsSwiperContainer'>
-            <Swiper spaceBetween={10} slidesPerView={4} >
-                {brands.map(brandImage => <SwiperSlide><Abrand image = {brandImage} /></SwiperSlide>)}
+            <Swiper spaceBetween={10} slidesPerView={4} id='slideR' >
+                {brands.map(brandImage => <SwiperSlide key={brandImage.name} ><Abrand image = {brandImage} /></SwiperSlide>)}
             </Swiper>
         </div>
     </div>
 }
 
 function Abrand({image}:any):JSX.Element{
-    return <div id = 'abrandDiv'>
-        <img src={image} />
+    return <div id = 'abrandDiv' onClick={function(){console.log(`${image.name}`);
+    }} >
+        <img src={image.img} />
+    </div>
+}
+
+export function Cars({ListOfCars}:carsType):JSX.Element{
+    return <div id='carsContainer'>
+                <h3  style={{color:"black"}} >Available Cars</h3>
+                <div id='listOfCars'>{ListOfCars.map(  (single)    =>  <Car car = {single} />)}</div>
+
+    </div>
+}
+// .image,title,year,price
+
+function Car({car}:any):JSX.Element{
+    return <div id='Acar'>
+                <Card className='aCarCard' >
+                    <div id='firstDiv'>
+                        <img src={car.image} /> 
+                    <div id='textDiv'>
+                            <h3>{car.title}</h3>
+                            <p>{car.year}</p>
+                        </div>
+                    </div>
+                    <div id='secondDiv' >
+                    <span id='priceSpan'>
+                        <p id='price' >{car.price}</p><p >/day</p>
+                    </span>
+                    <span id='detailsSpan'>
+                        <Link to='/'>Details</Link>
+                    </span>
+                    </div>
+                </Card>
     </div>
 }
