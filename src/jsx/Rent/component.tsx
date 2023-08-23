@@ -39,9 +39,9 @@ type brandType  = {
 }
 
 export function Brands({brands}:brandType):JSX.Element{
-    return <div>
+    return <div id='brandsContainer'>
         <h1>Brands</h1>
-        <div>
+        <div id='brandsSwiperContainer'>
             <Swiper spaceBetween={10} slidesPerView={4} >
                 {brands.map(brandImage => <SwiperSlide><Abrand image = {brandImage} /></SwiperSlide>)}
             </Swiper>
@@ -50,9 +50,7 @@ export function Brands({brands}:brandType):JSX.Element{
 }
 
 function Abrand({image}:any):JSX.Element{
-    return <div>
+    return <div id = 'abrandDiv'>
         <img src={image} />
     </div>
 }
-
-// audi tesla lamborghini ferari porsche toyota lexus pagani mazda  rolls royce range rover land rover  ford nissan vokswagen chevrollette
