@@ -2,6 +2,7 @@
 import Home from './Home/home';
 import Auth from './Auth/auth';
 import Rent from './Rent/index';
+import SingleCar from './SingleCar/index';
 import Layout from './Layout/layout';
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
@@ -23,7 +24,11 @@ const route  = createBrowserRouter([
         },
         {
           path:'/rent',
-          element:<Rent/>
+          element:<Rent/>,
+        },
+        {
+          path:'/rent/:brand',
+          element:<SingleCar/>
         }
       ]
     },

@@ -64,7 +64,7 @@ function Abrand({image}:any):JSX.Element{
 export function Cars({ListOfCars}:carsType):JSX.Element{
     return <div id='carsContainer'>
                 <h3  style={{color:"black"}} >Available Cars</h3>
-                <div id='listOfCars'>{ListOfCars.map(  (single)    =>  <Car car = {single} />)}</div>
+                <div id='listOfCars'>{ListOfCars.map(  (single)    =>  <Car car = {single} key = {single.title} />)}</div>
 
     </div>
 }
@@ -85,7 +85,7 @@ function Car({car}:any):JSX.Element{
                         <p id='price' >{car.price}</p><p >/day</p>
                     </span>
                     <span id='detailsSpan'>
-                        <Link to='/'>Details</Link>
+                        <Link to={`/rent/${car.brand}?model=${car.title}`}>Details</Link>
                     </span>
                     </div>
                 </Card>
