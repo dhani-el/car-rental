@@ -1,9 +1,11 @@
 // import { useSearchParams,useParams } from "react-router-dom";
 // import { CarDatabase } from "../../utils/data";
+import {useEffect} from 'react'
 import { Search } from "@mui/icons-material";
 import { CarImage,CarDescription, CarPrice } from "./component";
 import image from '/imageOne.png';
 import lambo from '../../assets/carLogo/lamborghini.png'
+import { useAppSelector } from "../../Store/store";
 
 const imageData = {
     image:image,
@@ -43,6 +45,10 @@ const features = [
 export default function SingleCar():JSX.Element{
     // const [searchParams, setSearchParams] = useSearchParams();
     // const {brand}  = useParams()
+    const value  = useAppSelector(function(state){ return state.pizza.value});
+    useEffect(function(){
+        console.log(value)
+    })
     
     return <div id="singleCarContainer">
             <CarImage image={imageData.image} logo={imageData.logo} title={imageData.title} year={imageData.year}/>

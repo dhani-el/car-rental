@@ -1,14 +1,18 @@
-import { SearchComponent, Brands,Cars} from "./component"
-import { useSearchParams, useParams } from "react-router-dom"
+import {useState} from 'react'
+import { SearchComponent, Brands,Cars} from "./component";
 import { ListOfCars, notActualCar,notActualCar1 } from "../../utils/data"
+import { useAppSelector } from "../../Store/store";
+
+
 export default function Rent():JSX.Element{
-        // const [searchParms, setSearchParma] = useSearchParams();
-        // const {brand} = useParams()
-        // console.log(searchParms.get('model'),brand);
-        
+        const [brand,setBrand] = useState('audio');
+        const brandTransform : any = brand
+        const Brandss = useAppSelector(state => state.CarData.Brands);
+        const Carss = useAppSelector(state => state.CarData.Cars);
     return <div>
                 <SearchComponent/>
-                <Brands brands={ListOfCars}/>
-                <Cars ListOfCars={[notActualCar,notActualCar1]} />
+                <Brands brands={Brandss}/>
+                <Cars ListOfCars={Carss[brandTransform].data} />
         </div>
+
 }
