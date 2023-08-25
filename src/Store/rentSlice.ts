@@ -77,7 +77,7 @@ const Audi = {logo:audi, brand:"audi",
     }
 
 const ListOfCars = {
-    audi:Audi,
+    "audio":Audi,
 }
 
 export const RentSlice = createSlice({
