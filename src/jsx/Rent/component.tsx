@@ -64,11 +64,10 @@ function Abrand({image}:any):JSX.Element{
 export function Cars({ListOfCars}:carsType):JSX.Element{
     return <div id='carsContainer'>
                 <h3  style={{color:"black"}} >Available Cars</h3>
-                <div id='listOfCars'>{ListOfCars.map(  (single)    =>  <Car car = {single} key = {single.title} />)}</div>
+                <div id='listOfCars'>{ListOfCars.map(  (single)=> <Car car = {single} key = {single.title} />)}</div>
 
     </div>
 }
-// .image,title,year,price
 
 function Car({car}:any):JSX.Element{
     return <div id='Acar'>
@@ -77,6 +76,7 @@ function Car({car}:any):JSX.Element{
                         <img src={car.image} /> 
                     <div id='textDiv'>
                             <h3>{car.title}</h3>
+                            {/* <h3>{car.model}</h3> */}
                             <p>{car.year}</p>
                         </div>
                     </div>
