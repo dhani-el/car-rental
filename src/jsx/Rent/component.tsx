@@ -12,7 +12,8 @@ type searchType = {
 }
 
 type brandType  = {
-    brands : any[]
+    brands : any[],
+    handleBrandChange: React.Dispatch<React.SetStateAction<string>>
 }
 
 type carsType = {
@@ -43,19 +44,19 @@ function SearchBar({handleClickFunction}:searchType):JSX.Element{
     </div>
 }
 
-export function Brands({brands}:brandType):JSX.Element{
+export function Brands({brands,handleBrandChange}:brandType):JSX.Element{
     return <div id='brandsContainer'>
         <h2>Brands</h2>
         <div id='brandsSwiperContainer'>
             <Swiper spaceBetween={10} slidesPerView={4} id='slideR' >
-                {brands.map(brandImage => <SwiperSlide key={brandImage.name} ><Abrand image = {brandImage} /></SwiperSlide>)}
+                {brands.map(brandImage => <SwiperSlide key={brandImage.name} ><Abrand image = {brandImage} handleClick = {handleBrandChange} /></SwiperSlide>)}
             </Swiper>
         </div>
     </div>
 }
 
-function Abrand({image}:any):JSX.Element{
-    return <div id = 'abrandDiv' onClick={function(){console.log(`${image.name}`);
+function Abrand({image,handleClick}:any):JSX.Element{
+    return <div id = 'abrandDiv' onClick={function(){handleClick(`${image.name}`);
     }} >
         <img src={image.img} />
     </div>

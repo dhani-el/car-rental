@@ -66,18 +66,23 @@ const ListOfBrands = [{img:audi,name:"Audi"},{img:astonMartin,name:"Aston Martin
                         {img:miniCooper,name:"Mini Cooper"},{img:nissan,name:"Nissan"},
                       {img:ferrari,name:"Ferrari"},{img:maserati,name:"Maserati"}]
 
-const Audi = {logo:audi, brand:"audi",
+const Audi = {logo:audi, brand:"Audi",
     data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
     {model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
     {model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
     {model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
     {model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
-
+        ]
+    }
+const AstonMartin = {logo:astonMartin, brand:"Aston Martin",
+    data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
         ]
     }
 
 const ListOfCars = {
-    "audio":Audi,
+    "Audi":Audi,
+    "Aston Martin":AstonMartin
 }
 
 export const RentSlice = createSlice({
