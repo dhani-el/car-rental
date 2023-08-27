@@ -17,7 +17,8 @@ type brandType  = {
 }
 
 type carsType = {
-    ListOfCars : any[]
+    ListOfCars : any[],
+    brand:string
 }
 
 export function SearchComponent():JSX.Element{
@@ -49,6 +50,7 @@ export function Brands({brands,handleBrandChange}:brandType):JSX.Element{
         <h2>Brands</h2>
         <div id='brandsSwiperContainer'>
             <Swiper spaceBetween={10} slidesPerView={4} id='slideR' >
+                <SwiperSlide><Abrand image = "ALL" handleClick = {handleBrandChange} /></SwiperSlide>
                 {brands.map(brandImage => <SwiperSlide key={brandImage.name} ><Abrand image = {brandImage} handleClick = {handleBrandChange} /></SwiperSlide>)}
             </Swiper>
         </div>
@@ -61,23 +63,29 @@ function Abrand({image,handleClick}:any):JSX.Element{
         <img src={image.img} />
     </div>
 }
-
-export function Cars({ListOfCars}:carsType):JSX.Element{
-    return <div id='carsContainer'>
-                <h3  style={{color:"black"}} >Available Cars</h3>
-                <div id='listOfCars'>{ListOfCars.map(  (single)=> <Car car = {single} key = {single.title} />)}</div>
-
+// I AM HERE
+function AllBrands(handleClick:Function){
+    return <div id ="allBrandsComponent" onClick={function(){
+        handleClick("all")
+    }}>
+        <p>ALL</p>
     </div>
 }
 
-function Car({car}:any):JSX.Element{
+export function Cars({ListOfCars,brand}:carsType):JSX.Element{
+    return <div id='carsContainer'>
+                <h3  style={{color:"black"}} >Available Cars</h3>
+                <div id='listOfCars'>{ListOfCars.map((single)=><div key={single.model} ><Car car = {single} brand = {brand}  /></div>)}</div>
+    </div>
+}
+
+function Car({car,brand}:any):JSX.Element{
     return <div id='Acar'>
                 <Card className='aCarCard' >
                     <div id='firstDiv'>
                         <img src={car.image} /> 
                     <div id='textDiv'>
-                            <h3>{car.title}</h3>
-                            {/* <h3>{car.model}</h3> */}
+                            <h3>{car.model}</h3>
                             <p>{car.year}</p>
                         </div>
                     </div>
@@ -86,7 +94,7 @@ function Car({car}:any):JSX.Element{
                         <p id='price' >{car.price}</p><p >/day</p>
                     </span>
                     <span id='detailsSpan'>
-                        <Link to={`/rent/${car.brand}?model=${car.title}`}>Details</Link>
+                        <Link to={`/rent/${brand}?model=${car.model}`}>Details</Link>
                     </span>
                     </div>
                 </Card>

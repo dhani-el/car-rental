@@ -14,7 +14,7 @@ export default function Rent():JSX.Element{
     return <div>
                 <SearchComponent/>
                 <Brands brands={Brandss} handleBrandChange={setBrand}/>
-                <Cars ListOfCars={Carss[brand].data} />
+                <Cars ListOfCars={Carss[brand].data} brand= {Carss[brand].brand} />
         </div>
 
 }
