@@ -1,18 +1,7 @@
-// import { useSearchParams,useParams } from "react-router-dom";
-// import { CarDatabase } from "../../utils/data";
-import {useEffect} from 'react'
+import { useSearchParams,useParams } from "react-router-dom";
 import { Search } from "@mui/icons-material";
 import { CarImage,CarDescription, CarPrice } from "./component";
-import image from '/imageOne.png';
-import lambo from '../../assets/carLogo/lamborghini.png'
 import { useAppSelector } from "../../Store/store";
-
-const imageData = {
-    image:image,
-    logo:lambo,
-    title:'Lamborghini',
-    year:'2020'  
-}
 
 const location ={
     address:"5,mufutau shobola",
@@ -43,15 +32,17 @@ const features = [
 ]
 
 export default function SingleCar():JSX.Element{
-    // const [searchParams, setSearchParams] = useSearchParams();
-    // const {brand}  = useParams()
-    const value  = useAppSelector(function(state){ return state.pizza.value});
-    useEffect(function(){
-        console.log(value)
-    })
+    const [searchParams, setSearchParams] = useSearchParams();
+    const model = searchParams.get('model');
+    const {brand}  = useParams();
+    const Selector = useAppSelector(function(state){ return state.CarData.Cars[brand]});
+    const data  = Selector.data;
+    const logo =  Selector.logo;
+    const info  = data.filter((adata:any)=> adata.model == model )[0]
+
     
     return <div id="singleCarContainer">
-            <CarImage image={imageData.image} logo={imageData.logo} title={imageData.title} year={imageData.year}/>
+            <CarImage image={info.image} logo={logo} title={info.model} year={info.year}/>
             <CarDescription  carFeatures={features} location={location}/>
             <CarPrice price="N120k"/>
     </div>
