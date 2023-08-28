@@ -1,5 +1,3 @@
-// import { useSearchParams,useParams } from "react-router-dom";
-// import { CarDatabase } from "../../utils/data";
 import { Search } from "@mui/icons-material";
 import { CarImage,CarDescription, CarPrice } from "./component";
 import image from '/imageOne.png';
@@ -13,7 +11,7 @@ const imageData = {
 }
 
 const location ={
-    address:"5,mufutau shobola",
+    address:"5,Mufutau Shobola, Ogba Lagos,Nigeria",
     meters:'50'
 }
 
@@ -41,8 +39,6 @@ const features = [
 ]
 
 export default function SingleCar():JSX.Element{
-    // const [searchParams, setSearchParams] = useSearchParams();
-    // const {brand}  = useParams()
     
     return <div id="singleCarContainer">
             <CarImage image={imageData.image} logo={imageData.logo} title={imageData.title} year={imageData.year}/>

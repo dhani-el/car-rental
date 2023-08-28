@@ -45,7 +45,6 @@ function SearchBar({handleClickFunction}:searchType):JSX.Element{
 
 export function Brands({brands}:brandType):JSX.Element{
     return <div id='brandsContainer'>
-        <h2>Brands</h2>
         <div id='brandsSwiperContainer'>
             <Swiper spaceBetween={10} slidesPerView={4} id='slideR' >
                 {brands.map(brandImage => <SwiperSlide key={brandImage.name} ><Abrand image = {brandImage} /></SwiperSlide>)}
