@@ -50,7 +50,7 @@ export function CarDescription({carFeatures,location}:carDescriptionType):JSX.El
 
  function CarSpecification({features}:features):JSX.Element{
     return <div id='carSpecificationDiv'>
-             <h2>Specification</h2>
+             <h2>SPECIFICATION</h2>
              <Features features={features}/>
             </div>
 }
@@ -90,8 +90,8 @@ type carLocationType = {
 function CarLocation({meters,address}:carLocationType):JSX.Element{
     return <div id='carLocationDiv' >
                 <div id="locatinHeaderDiv">
-                    <p>Location</p> 
-                    <span id='leftOfLocation'> <Streetview/> <p>{meters}m</p></span>
+                    <p id='locationText'>Location</p> 
+                    <span id='leftOfLocation'> <Streetview/> <p id='meters'>{meters}m</p></span>
                 </div>
                 <div id="actualLocationComponent"> 
                     <Place id ="placeIcon" />

@@ -53,9 +53,10 @@ body{
         #carSpecificationDiv{
             h2{
                 font-weight: 900;
+                color: rgb(177, 177, 177);
             }
             #featuresDiv{
-                margin-top: 1.5em;
+                margin-top: 0.5em;
                 height: 16vh;
                 #swipeRR{
                     height: 100%;
@@ -67,7 +68,7 @@ body{
                             flex-direction: column;
                             align-items: center;
                             justify-content: center;
-                            height: 90%;
+                            height: 96%;
                             background-color: rgb(0, 0, 0);
                             color: white;
                             border-radius: 1.2em;
@@ -95,19 +96,25 @@ body{
             }
         }
         #carLocationDiv{
-            margin-top: 1em;
+            display: flex;
+            flex-direction: column;
             #locatinHeaderDiv{
                 display: flex;
                 justify-content: space-between;
-                p{
+                #locationText{
                     font-size: 1.5em;
                     font-weight: 900;
-                    padding-left: 1em;
+                    padding-left: 0.8em;
+                    color: rgb(177, 177, 177);
+                }
+                #meters{
+                    font-size: 1.2em;
                 }
                 #leftOfLocation{
                     padding-right: 1em;
                     display: flex;
                     color: gray;
+                    align-items: flex-end;
                     p{
                         color: gray;
                     }
@@ -115,15 +122,23 @@ body{
             }
             #actualLocationComponent{
                 display: flex;
+                align-self: center;
                 align-items: center;
-                padding: 1em 0;
-                gap: 0.4em;
+                padding: 1em;
+                gap: 1em;
+                width: 90%;
+                border-radius: 0.8em;
+                background-color: rgb(241, 241, 241);
                 #placeIcon{
                     color: aquamarine;
                 }
                 p{
-                    font-size: 1.6em;
-                    font-weight: 900;
+                    width: 90%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    font-size: 1.2em;
+                    font-weight: 500;
                 }
             }
         }
