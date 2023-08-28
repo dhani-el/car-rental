@@ -50,6 +50,7 @@ export function Brands({brands,handleBrandChange}:brandType):JSX.Element{
         <h2>Brands</h2>
         <div id='brandsSwiperContainer'>
             <Swiper spaceBetween={10} slidesPerView={4} id='slideR' >
+                <AllBrands handleClick = {handleBrandChange} />
                 <SwiperSlide><Abrand image = "ALL" handleClick = {handleBrandChange} /></SwiperSlide>
                 {brands.map(brandImage => <SwiperSlide key={brandImage.name} ><Abrand image = {brandImage} handleClick = {handleBrandChange} /></SwiperSlide>)}
             </Swiper>
@@ -63,8 +64,11 @@ function Abrand({image,handleClick}:any):JSX.Element{
         <img src={image.img} />
     </div>
 }
-// I AM HERE
-function AllBrands(handleClick:Function){
+
+type allBrand = {
+    handleClick:Function
+}
+function AllBrands({handleClick}:allBrand){
     return <div id ="allBrandsComponent" onClick={function(){
         handleClick("all")
     }}>

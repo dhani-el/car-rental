@@ -34,5 +34,127 @@ data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
 {model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
     ]
 }
+const Maserati = {logo:maserati, brand:"Maserati",
+    data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"R8",image:FirstCar,year:'2018',price :'N150k',},
+    {model:"Roadster",image:FirstCar,year:'2018',price :'N58k',},
+    {model:"Supra",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"EV",image:FirstCar,year:'2018',price :'N50k',},
+        ]
+    }
 
-export {Audi,AstonMartin}
+const Porsche = {logo:porsche1, brand:"Porsche",
+data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    ]
+}
+const Nissan = {logo:nissan, brand:"Nissan",
+    data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"R8",image:FirstCar,year:'2018',price :'N150k',},
+    {model:"Roadster",image:FirstCar,year:'2018',price :'N58k',},
+    {model:"Supra",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"EV",image:FirstCar,year:'2018',price :'N50k',},
+        ]
+    }
+
+const MiniCooper = {logo:miniCooper, brand:"MiniCooper",
+data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    ]
+}
+const MercedesBenz = {logo:mercedesBenz1, brand:"MercedesBenz",
+    data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"R8",image:FirstCar,year:'2018',price :'N150k',},
+    {model:"Roadster",image:FirstCar,year:'2018',price :'N58k',},
+    {model:"Supra",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"EV",image:FirstCar,year:'2018',price :'N50k',},
+        ]
+    }
+
+const McLaren = {logo:mcLaren, brand:"McLaren",
+data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    ]
+}
+const Lexus = {logo:lexus, brand:"Lexus",
+    data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"R8",image:FirstCar,year:'2018',price :'N150k',},
+    {model:"Roadster",image:FirstCar,year:'2018',price :'N58k',},
+    {model:"Supra",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"EV",image:FirstCar,year:'2018',price :'N50k',},
+        ]
+    }
+
+const Lamborghini = {logo:lamborghini, brand:"Lamborghini",
+data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    ]
+}
+const Jaguar = {logo:jaguar, brand:"Jaguar",
+    data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"R8",image:FirstCar,year:'2018',price :'N150k',},
+    {model:"Roadster",image:FirstCar,year:'2018',price :'N58k',},
+    {model:"Supra",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"EV",image:FirstCar,year:'2018',price :'N50k',},
+        ]
+    }
+
+const Gmc = {logo:gmc, brand:"Gmc",
+data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    ]
+}
+const Dodge = {logo:dodge, brand:"Dodge",
+    data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"R8",image:FirstCar,year:'2018',price :'N150k',},
+    {model:"Roadster",image:FirstCar,year:'2018',price :'N58k',},
+    {model:"Supra",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"EV",image:FirstCar,year:'2018',price :'N50k',},
+        ]
+    }
+
+const Ferrari = {logo:ferrari, brand:"Ferrari",
+data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    ]
+}
+const Ford = {logo:ford, brand:"Ford",
+    data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"R8",image:FirstCar,year:'2018',price :'N150k',},
+    {model:"Roadster",image:FirstCar,year:'2018',price :'N58k',},
+    {model:"Supra",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"EV",image:FirstCar,year:'2018',price :'N50k',},
+        ]
+    }
+
+const Chevrolet = {logo:chevrolet, brand:"Chevrolet",
+data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    ]
+}
+const Cadillac = {logo:cadillac, brand:"Cadillac",
+    data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"R8",image:FirstCar,year:'2018',price :'N150k',},
+    {model:"Roadster",image:FirstCar,year:'2018',price :'N58k',},
+    {model:"Supra",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"EV",image:FirstCar,year:'2018',price :'N50k',},
+        ]
+    }
+
+const Bugatti = {logo:bugatti, brand:"Bugatti",
+data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    ]
+}
+const Bently = {logo:bently, brand:"Bently",
+    data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"R8",image:FirstCar,year:'2018',price :'N150k',},
+    {model:"Roadster",image:FirstCar,year:'2018',price :'N58k',},
+    {model:"Supra",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"EV",image:FirstCar,year:'2018',price :'N50k',},
+        ]
+    }
+
+
+export {Audi,AstonMartin,Bently,Bugatti,MercedesBenz,Cadillac,Chevrolet,Dodge,Ferrari,
+        Ford,Gmc,Jaguar,Lamborghini,Lexus,Maserati,McLaren,MiniCooper,Nissan,Porsche,}
