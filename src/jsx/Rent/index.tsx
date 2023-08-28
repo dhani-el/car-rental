@@ -11,7 +11,7 @@ export default function Rent():JSX.Element{
                 console.log(`the current brand is :${brand}`);
                 
         })
-    return <div>
+    return <div id='rentContainer'>
                 <SearchComponent/>
                 <Brands brands={Brandss} handleBrandChange={setBrand}/>
                 <Cars ListOfCars={Carss[brand].data} brand= {Carss[brand].brand} />
