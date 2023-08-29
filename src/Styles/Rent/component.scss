@@ -1,11 +1,4 @@
 
-#rentContainer{
-    height: 100vh;
-    width: 100vw;
-    // overflow: scroll;
-}
-
-
 
 #searchComponentContainer{
     width: 100%;
@@ -87,18 +80,22 @@
 }
 
 #carsContainer{
-    height: 70%;
-    overflow: scroll;
+    min-height: 70vh;
+    margin-bottom: 2em;
     h3{
         margin-bottom: 1.5em;
     }
     #listOfCars{
+        width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 2.2vh;
-        #Acar{
+        #keyDivs{
             width: 95%;
+        }
+        #Acar{
 
             .aCarCard{
                 border-radius: 1em;
@@ -116,6 +113,9 @@
                         display: flex;
                         flex-direction: column;
                         align-items: flex-end;
+                        h3{
+                            margin-bottom: 0;
+                        }
                         p{
                             color: gray;
                         }

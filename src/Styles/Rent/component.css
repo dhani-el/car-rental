@@ -1,8 +1,3 @@
-#rentContainer {
-  height: 100vh;
-  width: 100vw;
-}
-
 #searchComponentContainer {
   width: 100%;
   display: flex;
@@ -83,19 +78,21 @@
 }
 
 #carsContainer {
-  height: 70%;
-  overflow: scroll;
+  min-height: 70vh;
+  margin-bottom: 2em;
 }
 #carsContainer h3 {
   margin-bottom: 1.5em;
 }
 #carsContainer #listOfCars {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2.2vh;
 }
-#carsContainer #listOfCars #Acar {
+#carsContainer #listOfCars #keyDivs {
   width: 95%;
 }
 #carsContainer #listOfCars #Acar .aCarCard {
@@ -116,6 +113,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+#carsContainer #listOfCars #Acar .aCarCard #firstDiv #textDiv h3 {
+  margin-bottom: 0;
 }
 #carsContainer #listOfCars #Acar .aCarCard #firstDiv #textDiv p {
   color: gray;
