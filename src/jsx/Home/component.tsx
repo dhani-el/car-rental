@@ -56,7 +56,7 @@ function Paragraph():JSX.Element{
 
 function CallToAction():JSX.Element{
     return <div id='callToActionDiv' >
-            <Button variant='contained' ><Link to='/rent' ><p>RENT NOW</p></Link></Button>
+           <Link to='/rent' > <Button variant='contained' ><p>RENT NOW</p></Button></Link>
         </div>
 }
 
@@ -69,7 +69,7 @@ function Modelo():JSX.Element{
             return
         }
     }
-    return <div id='model' onClick={removeSpinIndicator}>
+    return <div id='model'onTouchMove={removeSpinIndicator} onMouseDown={removeSpinIndicator} >
         <Canvas shadows >
             <ambientLight intensity = {1} color={"white"} />
             <directionalLight intensity={1}  position={[0,5,0]} />

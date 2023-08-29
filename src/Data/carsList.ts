@@ -1,6 +1,7 @@
-import {Audi,AstonMartin,Bently,Bugatti,MercedesBenz,Cadillac,Chevrolet,Dodge,Ferrari,Ford,Gmc,Jaguar,Lamborghini,Lexus,Maserati,McLaren,MiniCooper,Nissan,Porsche} from './cars';
+import {All,Audi,AstonMartin,Bently,Bugatti,MercedesBenz,Cadillac,Chevrolet,Dodge,Ferrari,Ford,Gmc,Jaguar,Lamborghini,Lexus,Maserati,McLaren,MiniCooper,Nissan,Porsche} from './cars';
 
 const ListOfCars = {
+    "All":All,
     "Audi":Audi,
     "Aston Martin":AstonMartin,
     "Bently":Bently,

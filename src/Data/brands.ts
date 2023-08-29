@@ -19,7 +19,7 @@ import bently from '../assets/carLogo/bently.png';
 import astonMartin from '../assets/carLogo/astonMartin.png';
 
 
-const ListOfBrands = [{img:audi,name:"Audi"},{img:astonMartin,name:"Aston Martin"},
+const ListOfBrands = [{img:astonMartin,name:"Aston Martin"},{img:audi,name:"Audi"},
                         {img:bently,name:"Bently"},{img:bugatti,name:"Bugatti"},
                         {img:cadillac,name:"Cadillac"},{img:chevrolet,name:"Chevrolet"},
                         {img:dodge,name:"Dodge"},{img:porsche1,name:"Porsche"},{img:ford,name:"Ford"},

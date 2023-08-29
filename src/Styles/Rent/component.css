@@ -1,8 +1,3 @@
-#rentContainer {
-  height: 100vh;
-  width: 100vw;
-}
-
 #searchComponentContainer {
   width: 100%;
   display: flex;
@@ -15,6 +10,9 @@
   display: flex;
   padding: 1em;
   justify-content: space-between;
+}
+#searchComponentContainer #searchComponentCard #searchComponentTextContainer {
+  width: 90%;
 }
 #searchComponentContainer #searchComponentCard #searchComponentTextContainer h2 {
   display: inline;
@@ -29,9 +27,13 @@
   width: 100%;
   gap: 1em;
 }
+#searchComponentContainer #searchComponentCard #searchBar fieldset {
+  border-color: black;
+}
 #searchComponentContainer #searchComponentCard #searchBar .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
-  padding: 0.2em;
+  padding: 0.4em;
   width: 80%;
+  outline-color: purple;
 }
 #searchComponentContainer #searchComponentCard #searchBar .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
   width: 90%;
@@ -51,6 +53,17 @@
   align-items: center;
   justify-content: center;
 }
+#brandsContainer #brandsSwiperContainer #slideR #allBrandsComponent {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#brandsContainer #brandsSwiperContainer #slideR #allBrandsComponent p {
+  color: black;
+  font-size: 2em;
+  font-weight: 900;
+}
 #brandsContainer #brandsSwiperContainer #abrandDiv {
   height: 10vh;
   width: 25vw;
@@ -64,16 +77,22 @@
   width: 25vw;
 }
 
+#carsContainer {
+  min-height: 70vh;
+  margin-bottom: 2em;
+}
 #carsContainer h3 {
   margin-bottom: 1.5em;
 }
 #carsContainer #listOfCars {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2.2vh;
 }
-#carsContainer #listOfCars #Acar {
+#carsContainer #listOfCars #keyDivs {
   width: 95%;
 }
 #carsContainer #listOfCars #Acar .aCarCard {
@@ -95,6 +114,9 @@
   flex-direction: column;
   align-items: flex-end;
 }
+#carsContainer #listOfCars #Acar .aCarCard #firstDiv #textDiv h3 {
+  margin-bottom: 0;
+}
 #carsContainer #listOfCars #Acar .aCarCard #firstDiv #textDiv p {
   color: gray;
 }
@@ -114,7 +136,13 @@
 #carsContainer #listOfCars #Acar .aCarCard #secondDiv #priceSpan #price + p {
   color: gray;
 }
-#carsContainer #listOfCars #Acar .aCarCard #secondDiv #detailsSpan {
+#carsContainer #listOfCars #Acar .aCarCard #secondDiv a {
+  display: block;
+  width: 55%;
+  text-decoration: none;
+  color: navy;
+}
+#carsContainer #listOfCars #Acar .aCarCard #secondDiv a #detailsSpan {
   background-color: aquamarine;
   padding: 0.8em;
   border-top-left-radius: 0.5em;
@@ -122,9 +150,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 55%;
-}
-#carsContainer #listOfCars #Acar .aCarCard #secondDiv #detailsSpan a {
-  text-decoration: none;
-  color: navy;
+  width: 100%;
 }/*# sourceMappingURL=component.css.map */
