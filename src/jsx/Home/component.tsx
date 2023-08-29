@@ -85,14 +85,15 @@ function Modelo():JSX.Element{
 
 function HomeCarModel():JSX.Element{
     const isLandScape  = useMediaQuery({query: '(orientation:landscape)'});
-    const scale  = isLandScape ? ([0.005,0.005,0.005]) : ([0.0020,0.0020,0.0020])
+    const scale  = isLandScape ? ([0.005,0.005,0.005]) : ([0.0020,0.0020,0.0020]);
+    const position  = isLandScape ? ([0,0.68,0.5]) : ([1,0.68,1.4]);
     const Scene = useLoader(GLTFLoader,'/lambo.glb');
     return <>
                 <OrbitControls target={[0,0.35,0]}  maxPolarAngle={1.45} enablePan = {false} enableZoom = {false} />
                 <PerspectiveCamera makeDefault fov={50} position={[3,2,5]} />
                 <color args={[0,0,0]} attach= 'background' />
                 <mesh receiveShadow = {true} castShadow={true} > 
-                    <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {scale} position = {[1,1,1.2]}  receiveShadow = {true}  />
+                    <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {scale} position = {position}  receiveShadow = {true}  />
                 </mesh>
             </>
 }
@@ -110,22 +111,22 @@ function Ground():JSX.Element{
     }, [normal,roughness]);
 
     return <mesh rotation-x = {-Math.PI * 0.5} castShadow receiveShadow >
-                <planeGeometry args={[30,30]} />
+                <planeGeometry args={[15,15]} />
                 <MeshReflectorMaterial 
                 envMapIntensity={0}
                 normalMap={normal}
-                // normalScale = {[0.15,0.15]}
+                normalScale = {[0.15,0.15]}
                 roughnessMap={roughness}
                 dithering = {true}
                 color={[0.015,0.015,0.015]}
-                roughness={0.7}
+                roughness={1}
                 blur={[1000,400]}
                 mixBlur={30}
                 mixStrength={80}
                 mixContrast={1}
                 resolution={1024}
                 mirror={0}
-                depthScale={0.01}
+                depthScale={0.04}
                 minDepthThreshold={0.9}
                 // debug = {0}
                 maxDepthThreshold={1}
