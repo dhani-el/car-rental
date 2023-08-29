@@ -19,7 +19,13 @@ import bently from '../assets/carLogo/bently.png';
 import astonMartin from '../assets/carLogo/astonMartin.png';
 
 import FirstCar from '/imageOne.png'
-
+const All = {brand:"All",
+    data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"R8",image:FirstCar,year:'2018',price :'N150k',},
+    {model:"Roadster",image:FirstCar,year:'2018',price :'N58k',},
+    {model:"Supra",image:FirstCar,year:'2018',price :'N50k',},
+    {model:"EV",image:FirstCar,year:'2018',price :'N50k',},
+    ]}
 const Audi = {logo:audi, brand:"Audi",
     data:[{model:"Roadster",image:FirstCar,year:'2018',price :'N50k',},
     {model:"R8",image:FirstCar,year:'2018',price :'N150k',},
@@ -157,4 +163,4 @@ const Bently = {logo:bently, brand:"Bently",
 
 
 export {Audi,AstonMartin,Bently,Bugatti,MercedesBenz,Cadillac,Chevrolet,Dodge,Ferrari,
-        Ford,Gmc,Jaguar,Lamborghini,Lexus,Maserati,McLaren,MiniCooper,Nissan,Porsche,}
+        Ford,Gmc,Jaguar,Lamborghini,Lexus,Maserati,McLaren,MiniCooper,Nissan,Porsche,All}

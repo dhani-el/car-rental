@@ -58,6 +58,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            #allBrandsComponent{
+                height: 10vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p{
+                    color: black;
+                    font-size: 2em;
+                    font-weight: 900;
+                }
+            }
         }
         #abrandDiv{
             height: 10vh;

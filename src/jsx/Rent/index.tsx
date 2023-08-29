@@ -4,7 +4,7 @@ import { useAppSelector } from "../../Store/store";
 
 
 export default function Rent():JSX.Element{
-        const [brand,setBrand] = useState('Audi');
+        const [brand,setBrand] = useState('All');
         const Brandss = useAppSelector(state => state.CarData.Brands);
         const Carss = useAppSelector(state => state.CarData.Cars);
         useEffect(function(){

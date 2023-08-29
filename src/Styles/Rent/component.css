@@ -58,6 +58,17 @@
   align-items: center;
   justify-content: center;
 }
+#brandsContainer #brandsSwiperContainer #slideR #allBrandsComponent {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#brandsContainer #brandsSwiperContainer #slideR #allBrandsComponent p {
+  color: black;
+  font-size: 2em;
+  font-weight: 900;
+}
 #brandsContainer #brandsSwiperContainer #abrandDiv {
   height: 10vh;
   width: 25vw;
