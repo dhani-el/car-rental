@@ -16,6 +16,8 @@
         background-color: rgb(51, 51, 51);
         border-bottom-left-radius: 3em;
         border-bottom-right-radius: 3em;
+        // border : black solid 2px;
+
         img{
             height: auto;
             width: 100%;
@@ -45,6 +47,8 @@
     #descriptiveDiv{
         margin-top: 1em;
         height: 30%;
+        // border : black solid 2px;
+
         h2{
             padding-left: 1em;
         }
@@ -147,9 +151,14 @@
     #priceComponent{
         margin-top: 1.5em;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: space-between;
-        height: 10%;
+        height: 14%;
+        background-color: rgb(241, 241, 241);
+        width: 95%;
+        margin-left: 2.5%;
+        border-radius: 0.5em;
+        // border : black solid 2px;
         #pricePDiv{
             display: flex;
             font-size: 1.5em;

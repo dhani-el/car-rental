@@ -142,9 +142,13 @@
 #singleCarContainer #priceComponent {
   margin-top: 1.5em;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  height: 10%;
+  height: 14%;
+  background-color: rgb(241, 241, 241);
+  width: 95%;
+  margin-left: 2.5%;
+  border-radius: 0.5em;
 }
 #singleCarContainer #priceComponent #pricePDiv {
   display: flex;
