@@ -4,13 +4,15 @@ import {User} from 'react-feather';
 import ViewList from '@mui/icons-material/ViewList';
 import {Close} from '@mui/icons-material';
 import {motion} from 'framer-motion';
+import { useAppSelector } from '../../Store/store';
 import { Link, useLocation } from 'react-router-dom';
 import '../../Styles/Layout/component.css';
 import LogoImage from '/one.png';
 
 
 type authProp =  {
-    loggedIn:boolean
+    loggedIn:boolean,
+    username:string
 }
 
 type userProp = {
@@ -21,10 +23,13 @@ type menuProp = { isOpen : boolean, closeMenuFunction:Function}
 
 
 export function Header():JSX.Element{
+    const loginData = useAppSelector(state => state.Authentication);
+    console.log(loginData.isUserLoggedIn);
+    
     return <div id = "header">
              <Logo/>
              <NavBar/>
-             <Authenticator loggedIn = {false} />
+             <Authenticator loggedIn = {loginData.isUserLoggedIn} username={loginData.username} />
              <Menu/>
         </div>
 }
@@ -45,9 +50,9 @@ function NavBar():JSX.Element{
     </div>
 }
 
-function Authenticator(loginProp:authProp):JSX.Element{
+function Authenticator({loggedIn,username}:authProp):JSX.Element{
     return <div id="authenticator" >
-        {loginProp.loggedIn ? <UserComponent name="omotayo" /> : <AuthButton/> }
+        {loggedIn ? <UserComponent name={username} /> : <AuthButton/> }
     </div>
 }
 
