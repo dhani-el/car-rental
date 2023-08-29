@@ -97,8 +97,8 @@
   position: relative;
   width: -moz-min-content;
   width: min-content;
-  bottom: 40%;
-  left: 50%;
+  bottom: 50%;
+  left: 48%;
 }
 
 @media (orientation: landscape) {
