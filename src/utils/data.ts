@@ -24,6 +24,11 @@ export const ListOfCars = [{img:audi,name:"Audi"},{img:astonMartin,name:"Aston M
 {img:chevrolet,name:"Chevrolet"},{img:dodge,name:"Dodge"},{img:porsche1,name:"Porsche"},{img:ford,name:"Ford"},{img:gmc,name:"Gmc"},
 {img:jaguar,name:"Jaguar"},{img:lamborghini,name:"Lamborghini"},{img:lexus,name:"Lexus"},{img:mcLaren,name:"McLaren"},{img:mercedesBenz1,name:"Mercedes Benz"},{img:miniCooper,name:"Mini Cooper"},{img:nissan,name:"Nissan"},{img:ferrari,name:"Ferrari"},{img:maserati,name:"Maserati"}]
 
+// const branData = []
+// const carsData = {
+// audi:{logo:"image", data:[{model:"model name",image:'car image', title:'Bently ariel',year:'2018',price :'N50k'}]}
+// }
+
 export const notActualCar = {
         brand:'audi',
         image:FirstCar,
