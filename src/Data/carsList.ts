@@ -5,7 +5,7 @@ const ListOfCars = {
     "Aston Martin":AstonMartin,
     "Bently":Bently,
     "Bugatti":Bugatti,
-    "MercedesBenz":MercedesBenz,
+    "Mercedes Benz":MercedesBenz,
     "Cadillac":Cadillac,
     "Chevrolet":Chevrolet,
     "Dodge":Dodge,
@@ -17,7 +17,7 @@ const ListOfCars = {
     "Lexus":Lexus,
     "Maserati":Maserati,
     "McLaren":McLaren,
-    "MiniCooper":MiniCooper,
+    "Mini Cooper":MiniCooper,
     "Nissan":Nissan,
     "Porsche":Porsche
 }
