@@ -16,6 +16,9 @@
   padding: 1em;
   justify-content: space-between;
 }
+#searchComponentContainer #searchComponentCard #searchComponentTextContainer {
+  width: 90%;
+}
 #searchComponentContainer #searchComponentCard #searchComponentTextContainer h2 {
   display: inline;
 }
@@ -29,9 +32,13 @@
   width: 100%;
   gap: 1em;
 }
+#searchComponentContainer #searchComponentCard #searchBar fieldset {
+  border-color: black;
+}
 #searchComponentContainer #searchComponentCard #searchBar .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
-  padding: 0.2em;
+  padding: 0.4em;
   width: 80%;
+  outline-color: purple;
 }
 #searchComponentContainer #searchComponentCard #searchBar .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
   width: 90%;

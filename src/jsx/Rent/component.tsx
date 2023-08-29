@@ -29,9 +29,9 @@ export function SearchComponent():JSX.Element{
         
         setOpenSearchBar((initial)=> !initial)
     }
-    return   <div id="searchComponentContainer">
-                <Card id = "searchComponentCard">
-                   {!openSearchBar && <div id="searchComponentTextContainer"><span id="searchComponentTextH2" >Choose</span><p id="searchComponentTextP"> a Car</p></div>}
+    return   <div id="searchComponentContainer" >
+                <Card id = "searchComponentCard"  >
+                   {!openSearchBar && <div id="searchComponentTextContainer" onClick={()=>{setOpenSearchBar(true)}} ><span id="searchComponentTextH2" >Choose</span><p id="searchComponentTextP"> a Car</p></div>}
                     {!openSearchBar && <Search onClick = {handleToggleSearchBar} /> }
                     {openSearchBar && <SearchBar handleClickFunction = {handleToggleSearchBar}/>}
                 </Card>
