@@ -1,3 +1,8 @@
+#rentContainer {
+  height: 100vh;
+  width: 100vw;
+}
+
 #searchComponentContainer {
   width: 100%;
   display: flex;
@@ -35,9 +40,8 @@
 #brandsContainer {
   width: 100%;
   height: 10vh;
-}
-#brandsContainer h2 {
-  color: black;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
 }
 #brandsContainer #brandsSwiperContainer {
   height: 100%;
@@ -60,6 +64,9 @@
   width: 25vw;
 }
 
+#carsContainer h3 {
+  margin-bottom: 1.5em;
+}
 #carsContainer #listOfCars {
   display: flex;
   flex-direction: column;
@@ -119,5 +126,5 @@
 }
 #carsContainer #listOfCars #Acar .aCarCard #secondDiv #detailsSpan a {
   text-decoration: none;
-  color: white;
+  color: navy;
 }/*# sourceMappingURL=component.css.map */

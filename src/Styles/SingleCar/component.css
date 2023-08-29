@@ -1,12 +1,9 @@
-body {
-  color: black;
-  margin: 0;
-  padding: 0;
-}
-
 #singleCarContainer {
   width: 100vw;
   height: 100vh;
+  color: black;
+  margin: 0;
+  padding: 0;
 }
 #singleCarContainer #carImageDiv {
   position: relative;
@@ -52,9 +49,10 @@ body {
 }
 #singleCarContainer #descriptiveDiv #carSpecificationDiv h2 {
   font-weight: 900;
+  color: rgb(177, 177, 177);
 }
 #singleCarContainer #descriptiveDiv #carSpecificationDiv #featuresDiv {
-  margin-top: 1.5em;
+  margin-top: 0.5em;
   height: 16vh;
 }
 #singleCarContainer #descriptiveDiv #carSpecificationDiv #featuresDiv #swipeRR {
@@ -64,18 +62,18 @@ body {
   height: 100%;
 }
 #singleCarContainer #descriptiveDiv #carSpecificationDiv #featuresDiv #swipeRR #SwipeRslide #singleFeature {
-  width: 40vw;
+  width: 35vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 90%;
   background-color: rgb(0, 0, 0);
-  color: white;
+  color: aquamarine;
   border-radius: 1.2em;
 }
 #singleCarContainer #descriptiveDiv #carSpecificationDiv #featuresDiv #swipeRR #SwipeRslide #singleFeature #icon {
-  height: 45%;
+  height: 35%;
   width: auto;
 }
 #singleCarContainer #descriptiveDiv #carSpecificationDiv #featuresDiv #swipeRR #SwipeRslide #singleFeature #featureValueSpan {
@@ -91,58 +89,84 @@ body {
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
+  text-transform: capitalize;
+  color: rgb(163, 160, 160);
 }
 #singleCarContainer #descriptiveDiv #carLocationDiv {
-  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
 }
 #singleCarContainer #descriptiveDiv #carLocationDiv #locatinHeaderDiv {
   display: flex;
   justify-content: space-between;
 }
-#singleCarContainer #descriptiveDiv #carLocationDiv #locatinHeaderDiv p {
+#singleCarContainer #descriptiveDiv #carLocationDiv #locatinHeaderDiv #locationText {
   font-size: 1.5em;
   font-weight: 900;
-  padding-left: 1em;
+  padding-left: 0.8em;
+  color: rgb(177, 177, 177);
+}
+#singleCarContainer #descriptiveDiv #carLocationDiv #locatinHeaderDiv #meters {
+  font-size: 1.2em;
 }
 #singleCarContainer #descriptiveDiv #carLocationDiv #locatinHeaderDiv #leftOfLocation {
   padding-right: 1em;
   display: flex;
   color: gray;
+  align-items: flex-end;
 }
 #singleCarContainer #descriptiveDiv #carLocationDiv #locatinHeaderDiv #leftOfLocation p {
   color: gray;
 }
 #singleCarContainer #descriptiveDiv #carLocationDiv #actualLocationComponent {
   display: flex;
+  align-self: center;
   align-items: center;
-  padding: 1em 0;
-  gap: 0.4em;
+  padding: 1em;
+  gap: 1em;
+  width: 90%;
+  border-radius: 0.8em;
+  background-color: rgb(241, 241, 241);
 }
 #singleCarContainer #descriptiveDiv #carLocationDiv #actualLocationComponent #placeIcon {
   color: aquamarine;
 }
 #singleCarContainer #descriptiveDiv #carLocationDiv #actualLocationComponent p {
-  font-size: 1.6em;
-  font-weight: 900;
+  width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 #singleCarContainer #priceComponent {
   margin-top: 1.5em;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  height: 10%;
+  height: 14%;
+  background-color: rgb(241, 241, 241);
+  width: 95%;
+  margin-left: 2.5%;
+  border-radius: 1.2em;
 }
 #singleCarContainer #priceComponent #pricePDiv {
   display: flex;
-  font-size: 2em;
+  font-size: 1.8em;
+  margin-left: 0.5em;
+  margin-bottom: 1em;
+  font-weight: 900;
+  text-transform: capitalize;
+  color: rgb(67, 67, 67);
 }
 #singleCarContainer #priceComponent span {
   width: 50%;
-  height: 5vh;
+  height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: aquamarine;
   border-top-left-radius: 1.5em;
   border-bottom-right-radius: 1.5em;
+  font-size: 1.5em;
 }/*# sourceMappingURL=component.css.map */
