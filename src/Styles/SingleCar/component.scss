@@ -1,13 +1,12 @@
-body{
-    color: black;
-    margin:0;
-    padding: 0;
-}
+
 
 
 #singleCarContainer{
     width: 100vw;
     height: 100vh;
+    color: black;
+    margin:0;
+    padding: 0;
     #carImageDiv{
         position: relative;
         display: flex;
@@ -67,17 +66,17 @@ body{
                     #SwipeRslide{
                         height: 100%;
                         #singleFeature{
-                            width: 40vw;
+                            width: 35vw;
                             display: flex;
                             flex-direction: column;
                             align-items: center;
                             justify-content: center;
-                            height: 96%;
+                            height: 90%;
                             background-color: rgb(0, 0, 0);
-                            color: white;
+                            color: aquamarine;
                             border-radius: 1.2em;
                             #icon{
-                                height: 45%;
+                                height: 35%;
                                 width: auto;
                             }
                             #featureValueSpan{
@@ -91,7 +90,9 @@ body{
                                     width: 100%;
                                     white-space: nowrap;
                                     overflow-x: hidden;
-                                    text-overflow: ellipsis
+                                    text-overflow: ellipsis;
+                                    text-transform: capitalize;
+                                    color: rgb(163, 160, 160);
                                 }
                             }
                         }
@@ -160,7 +161,10 @@ body{
         // border : black solid 2px;
         #pricePDiv{
             display: flex;
-            font-size: 2em;
+            font-size: 1.5em;
+            margin-left: 0.5em;
+            font-weight: 900;
+            text-transform: capitalize;
         }
         span{
             width: 50%;
