@@ -93,9 +93,9 @@ function Car({car,brand}:any):JSX.Element{
                     <span id='priceSpan'>
                         <p id='price' >{car.price}</p><p >/day</p>
                     </span>
-                    <span id='detailsSpan'>
-                        <Link to={`/rent/${brand}?model=${car.model}`}>Details</Link>
-                    </span>
+                    <Link to={`/rent/${brand}?model=${car.model}`}><span id='detailsSpan'>
+                        Details
+                    </span></Link>
                     </div>
                 </Card>
     </div>

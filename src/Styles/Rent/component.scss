@@ -2,6 +2,7 @@
 #rentContainer{
     height: 100vh;
     width: 100vw;
+    // overflow: scroll;
 }
 
 
@@ -86,6 +87,8 @@
 }
 
 #carsContainer{
+    height: 70%;
+    overflow: scroll;
     h3{
         margin-bottom: 1.5em;
     }
@@ -133,20 +136,21 @@
                             color: gray;
                         }
                     }
-                    #detailsSpan{
-                        background-color: aquamarine;
-                        padding: 0.8em;
-                        border-top-left-radius: 0.5em;
-                        border-bottom-right-radius: 0.5em;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                    a{
+                        display: block;
                         width: 55%;
-                        a{
-                            text-decoration: none;
-                            color: navy;
+                        text-decoration: none;
+                        color: navy;
+                        #detailsSpan{
+                            background-color: aquamarine;
+                            padding: 0.8em;
+                            border-top-left-radius: 0.5em;
+                            border-bottom-right-radius: 0.5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
                         }
-
                     }
                 }
             }
