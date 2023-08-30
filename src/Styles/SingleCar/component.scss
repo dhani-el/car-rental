@@ -3,7 +3,7 @@
 
 #singleCarContainer{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     color: black;
     margin:0;
     padding: 0;
@@ -12,7 +12,7 @@
         display: flex;
         align-items: center;
         width: 100%;
-        height: 50%;
+        height: 50vh;
         background-color: rgb(51, 51, 51);
         border-bottom-left-radius: 3em;
         border-bottom-right-radius: 3em;
@@ -47,7 +47,6 @@
     #descriptiveDiv{
         margin-top: 1em;
         height: 30%;
-        // border : black solid 2px;
 
         h2{
             padding-left: 1em;
@@ -182,7 +181,7 @@
 @media (orientation:'landscape'){
     #singleCarContainer{
         #carImageDiv{
-            height: 55%;
+            height: 55vh;
             justify-content: center;
             border-bottom-left-radius:0;
             border-bottom-right-radius:0;
@@ -199,6 +198,28 @@
                     width: 40%;
                 }
             }
+        }
+        #descriptiveDiv{
+            #carLocationDiv{
+                #locatinHeaderDiv{
+                    width: 90%;
+                    padding: 0 5%;
+                    margin-bottom: 1em;
+                }
+                #actualLocationComponent{
+                    border-radius: 0;
+                }
+            }
+        }
+        #priceComponent{
+            margin-top: 0;
+            width: 90%;
+            margin: 0 5%;
+            padding-top: 2em;
+            border-radius: 0;
+            border-bottom-left-radius: 1em;
+            border-bottom-right-radius: 1em;
+            margin-bottom: 4em;
         }
     }
 }
