@@ -166,4 +166,26 @@
   background-color: aquamarine;
   border-top-left-radius: 1.5em;
   border-bottom-right-radius: 1.5em;
+}
+
+@media (orientation: landscape) {
+  #singleCarContainer #carImageDiv {
+    height: 55%;
+    justify-content: center;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: rgb(87, 87, 87);
+  }
+  #singleCarContainer #carImageDiv img {
+    width: auto;
+    height: 100%;
+    justify-self: center;
+  }
+  #singleCarContainer #carImageDiv #carImageTextSpan {
+    width: 30%;
+    align-items: center;
+  }
+  #singleCarContainer #carImageDiv #carImageTextSpan img {
+    width: 40%;
+  }
 }/*# sourceMappingURL=component.css.map */

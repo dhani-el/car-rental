@@ -178,3 +178,27 @@
         }
     }
 }
+
+@media (orientation:'landscape'){
+    #singleCarContainer{
+        #carImageDiv{
+            height: 55%;
+            justify-content: center;
+            border-bottom-left-radius:0;
+            border-bottom-right-radius:0;
+            background-color: rgb(87, 87, 87);
+            img{
+                width: auto;
+                height: 100%;
+                justify-self: center;
+            }
+            #carImageTextSpan{
+                width: 30%;
+                align-items: center;
+                img{
+                    width: 40%;
+                }
+            }
+        }
+    }
+}
