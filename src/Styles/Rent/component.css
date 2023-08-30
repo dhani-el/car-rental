@@ -151,4 +151,22 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+@media (orientation: landscape) {
+  #brandsContainer {
+    height: auto;
+  }
+  #brandsContainer #brandsSwiperContainer {
+    height: auto;
+    margin-bottom: 2em;
+  }
+  #brandsContainer #brandsSwiperContainer #abrandDiv {
+    height: 100%;
+    width: 10vw;
+  }
+  #brandsContainer #brandsSwiperContainer #abrandDiv img {
+    width: 100%;
+    height: 100%;
+  }
 }/*# sourceMappingURL=component.css.map */

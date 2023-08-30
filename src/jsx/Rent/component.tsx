@@ -3,6 +3,7 @@ import { TextField, Card } from "@mui/material";
 import { Search, Close } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import 'swiper/css'
 import '../../Styles/Rent/component.css';
 
@@ -46,9 +47,12 @@ function SearchBar({handleClickFunction}:searchType):JSX.Element{
 }
 
 export function Brands({brands,handleBrandChange}:brandType):JSX.Element{
+const isLandscape = useMediaQuery({query:'(orientation:landscape)'});
+console.log(isLandscape);
+
     return <div id='brandsContainer'>
         <div id='brandsSwiperContainer'>
-            <Swiper spaceBetween={10} slidesPerView={4} id='slideR' >
+            <Swiper spaceBetween={10} slidesPerView={isLandscape? 8 : 4} id='slideR' >
                 <SwiperSlide><AllBrands  handleClick = {handleBrandChange} /></SwiperSlide>
                 {brands.map(brandImage => <SwiperSlide key={brandImage.name} ><Abrand image = {brandImage} handleClick = {handleBrandChange} /></SwiperSlide>)}
             </Swiper>

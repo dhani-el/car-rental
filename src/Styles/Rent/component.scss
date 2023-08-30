@@ -157,3 +157,29 @@
         }
     }
 }
+
+
+@media (orientation : 'landscape'){
+    #brandsContainer{
+            height: auto;
+        #brandsSwiperContainer{
+            height: auto;
+            margin-bottom: 2em;
+            #abrandDiv{
+                height: 100%;
+                width: 10vw;
+                img{
+                    width: 100%;
+                    height:100%;
+                }
+            }
+        }
+    }
+
+    #carsContainer{
+        #listOfCars{
+            
+        }
+    }
+
+}
