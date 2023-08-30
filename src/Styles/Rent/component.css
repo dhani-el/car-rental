@@ -151,4 +151,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+@media (orientation: landscape) {
+  #brandsContainer #brandsSwiperContainer #slideR {
+    height: 15vh;
+  }
 }/*# sourceMappingURL=component.css.map */

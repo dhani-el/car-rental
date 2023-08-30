@@ -46,6 +46,7 @@ function SearchBar({handleClickFunction}:searchType):JSX.Element{
 }
 
 export function Brands({brands,handleBrandChange}:brandType):JSX.Element{
+    
     return <div id='brandsContainer'>
         <div id='brandsSwiperContainer'>
             <Swiper spaceBetween={10} slidesPerView={4} id='slideR' >

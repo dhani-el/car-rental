@@ -157,3 +157,16 @@
         }
     }
 }
+
+@media (orientation : 'landscape') {
+    #brandsContainer{
+        #brandsSwiperContainer{
+            #slideR{
+                height: 15vh;
+                #allBrandsComponent{
+
+                }
+            }
+        }
+    }
+}
