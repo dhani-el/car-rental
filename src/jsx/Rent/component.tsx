@@ -78,7 +78,7 @@ function AllBrands({handleClick}:allBrand){
 
 export function Cars({ListOfCars,brand}:carsType):JSX.Element{
     return <div id='carsContainer'>
-                <h3  style={{color:"black"}} >Available Cars</h3>
+                <h3  style={{color:"black"}} >AVAILABLE CARS</h3>
                 <div id='listOfCars'>{ListOfCars.map((single)=><div key={single.model} id='keyDivs' ><Car car = {single} brand = {brand}  /></div>)}</div>
     </div>
 }
@@ -98,7 +98,7 @@ function Car({car,brand}:any):JSX.Element{
                         <p id='price' >{car.price}</p><p >/day</p>
                     </span>
                     <Link to={`/rent/${brand}?model=${car.model}`}><span id='detailsSpan'>
-                        Details
+                       DETAILS
                     </span></Link>
                     </div>
                 </Card>

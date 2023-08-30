@@ -177,8 +177,26 @@
     }
 
     #carsContainer{
+        h3{
+            padding-left: 2em;
+        }
         #listOfCars{
+            flex-direction: row;
+            flex-wrap: wrap;
+            // justify-content: space-evenly;
             
+            #keyDivs{
+                width: 42%;
+                #Acar{
+                    .aCarCard{
+                        background-color: rgb(240, 240, 240);
+                        #firstDiv{
+                            width: 100%;
+                            height: 10vh;
+                        }
+                    }
+                }
+            }
         }
     }
 
