@@ -154,7 +154,36 @@
 }
 
 @media (orientation: landscape) {
-  #brandsContainer #brandsSwiperContainer #slideR {
-    height: 15vh;
+  #brandsContainer {
+    height: auto;
+  }
+  #brandsContainer #brandsSwiperContainer {
+    height: auto;
+    margin-bottom: 2em;
+  }
+  #brandsContainer #brandsSwiperContainer #abrandDiv {
+    height: 100%;
+    width: 10vw;
+  }
+  #brandsContainer #brandsSwiperContainer #abrandDiv img {
+    width: 100%;
+    height: 100%;
+  }
+  #carsContainer h3 {
+    padding-left: 2em;
+  }
+  #carsContainer #listOfCars {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #carsContainer #listOfCars #keyDivs {
+    width: 42%;
+  }
+  #carsContainer #listOfCars #keyDivs #Acar .aCarCard {
+    background-color: rgb(240, 240, 240);
+  }
+  #carsContainer #listOfCars #keyDivs #Acar .aCarCard #firstDiv {
+    width: 100%;
+    height: 10vh;
   }
 }/*# sourceMappingURL=component.css.map */

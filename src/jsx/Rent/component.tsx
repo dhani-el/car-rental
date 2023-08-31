@@ -3,6 +3,7 @@ import { TextField, Card } from "@mui/material";
 import { Search, Close } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import 'swiper/css'
 import '../../Styles/Rent/component.css';
 
@@ -46,10 +47,13 @@ function SearchBar({handleClickFunction}:searchType):JSX.Element{
 }
 
 export function Brands({brands,handleBrandChange}:brandType):JSX.Element{
-    
+const isLandscape = useMediaQuery({query:'(orientation:landscape)'});
+console.log(isLandscape);
+
+
     return <div id='brandsContainer'>
         <div id='brandsSwiperContainer'>
-            <Swiper spaceBetween={10} slidesPerView={4} id='slideR' >
+            <Swiper spaceBetween={10} slidesPerView={isLandscape? 8 : 4} id='slideR' >
                 <SwiperSlide><AllBrands  handleClick = {handleBrandChange} /></SwiperSlide>
                 {brands.map(brandImage => <SwiperSlide key={brandImage.name} ><Abrand image = {brandImage} handleClick = {handleBrandChange} /></SwiperSlide>)}
             </Swiper>
@@ -75,7 +79,7 @@ function AllBrands({handleClick}:allBrand){
 
 export function Cars({ListOfCars,brand}:carsType):JSX.Element{
     return <div id='carsContainer'>
-                <h3  style={{color:"black"}} >Available Cars</h3>
+                <h3  style={{color:"black"}} >AVAILABLE CARS</h3>
                 <div id='listOfCars'>{ListOfCars.map((single)=><div key={single.model} id='keyDivs' ><Car car = {single} brand = {brand}  /></div>)}</div>
     </div>
 }
@@ -95,7 +99,7 @@ function Car({car,brand}:any):JSX.Element{
                         <p id='price' >{car.price}</p><p >/day</p>
                     </span>
                     <Link to={`/rent/${brand}?model=${car.model}`}><span id='detailsSpan'>
-                        Details
+                       DETAILS
                     </span></Link>
                     </div>
                 </Card>

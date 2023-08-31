@@ -158,15 +158,39 @@
     }
 }
 
-@media (orientation : 'landscape') {
+@media (orientation : 'landscape'){
     #brandsContainer{
+            height: auto;
         #brandsSwiperContainer{
-            #slideR{
-                height: 15vh;
-                #allBrandsComponent{
-
+            height: auto;
+            margin-bottom: 2em;
+            #abrandDiv{
+                height: 100%;
+                width: 10vw;
+                img{
+                    width: 100%;
+                    height:100%;
                 }
             }
         }
     }
-}
+
+    #carsContainer{
+        h3{
+            padding-left: 2em;
+        }
+        #listOfCars{
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+            #keyDivs{
+                width: 42%;
+                #Acar{
+                    .aCarCard{
+                        background-color: rgb(240, 240, 240);
+                        #firstDiv{
+                            width: 100%;
+                            height: 10vh;
+                        }
+                    }
+
