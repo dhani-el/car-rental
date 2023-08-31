@@ -148,18 +148,20 @@
   background-color: rgb(241, 241, 241);
   width: 95%;
   margin-left: 2.5%;
-  border-radius: 0.5em;
+  border-radius: 1.2em;
 }
 #singleCarContainer #priceComponent #pricePDiv {
   display: flex;
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin-left: 0.5em;
+  margin-bottom: 1em;
   font-weight: 900;
   text-transform: capitalize;
+  color: rgb(67, 67, 67);
 }
 #singleCarContainer #priceComponent span {
   width: 50%;
-  height: 5vh;
+  height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -50,6 +50,7 @@ export function Brands({brands,handleBrandChange}:brandType):JSX.Element{
 const isLandscape = useMediaQuery({query:'(orientation:landscape)'});
 console.log(isLandscape);
 
+
     return <div id='brandsContainer'>
         <div id='brandsSwiperContainer'>
             <Swiper spaceBetween={10} slidesPerView={isLandscape? 8 : 4} id='slideR' >

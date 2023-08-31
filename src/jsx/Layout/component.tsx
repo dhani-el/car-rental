@@ -4,27 +4,32 @@ import {User} from 'react-feather';
 import ViewList from '@mui/icons-material/ViewList';
 import {Close} from '@mui/icons-material';
 import {motion} from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { useAppSelector } from '../../Store/store';
+import { Link, useLocation } from 'react-router-dom';
 import '../../Styles/Layout/component.css';
 import LogoImage from '/one.png';
 
 
 type authProp =  {
-    loggedIn:boolean
+    loggedIn:boolean,
+    username:string
 }
 
 type userProp = {
     name:string
 }
 
-type menuProp = { isOpen : boolean}
+type menuProp = { isOpen : boolean, closeMenuFunction:Function}
 
 
 export function Header():JSX.Element{
+    const loginData = useAppSelector(state => state.Authentication);
+    console.log(loginData.isUserLoggedIn);
+    
     return <div id = "header">
              <Logo/>
              <NavBar/>
-             <Authenticator loggedIn = {false} />
+             <Authenticator loggedIn = {loginData.isUserLoggedIn} username={loginData.username} />
              <Menu/>
         </div>
 }
@@ -36,17 +41,18 @@ function Logo():JSX.Element{
 }
 
 function NavBar():JSX.Element{
+    const location = useLocation().pathname;
+    const raw = [{link:"/",title:"HOME"},{link:"/shop",title:"SHOP"},{link:"/rent",title:"RENT"},{link:"/dealers",title:"DEALERS"},]
+    const refined = raw.filter(function(data){ return data.link != location});
+
     return <div id="navBar" >
-            <Link to="/shop"  className="navLinks" > Shop</Link>
-            <Link to="/rent" className="navLinks"  >Rent</Link>
-            <Link to="/dealers"  className="navLinks" >Dealers</Link>
-            <Link to="/more"  className="navLinks" >More</Link>
+        {refined.map(function(info){return <Link to={info.link}  className="navLinks" > {info.title}</Link> })}
     </div>
 }
 
-function Authenticator(loginProp:authProp):JSX.Element{
+function Authenticator({loggedIn,username}:authProp):JSX.Element{
     return <div id="authenticator" >
-        {loginProp.loggedIn ? <UserComponent name="omotayo" /> : <AuthButton/> }
+        {loggedIn ? <UserComponent name={username} /> : <AuthButton/> }
     </div>
 }
 
@@ -71,11 +77,13 @@ function Menu():JSX.Element{
                 <motion.div onClick={()=>{setIsOpen((!isOpen))}} >
                    { isOpen ? <Close id ="menuCloseIcon" className='menuIcons' /> :<ViewList id = "menuListIcon" className='menuIcons'/> }
                 </motion.div>
-                <MenuBody isOpen={isOpen} />
+                <MenuBody isOpen={isOpen} closeMenuFunction={setIsOpen} />
         </div>
 }
 
-function MenuBody({isOpen} : menuProp):JSX.Element{
+function MenuBody({isOpen,closeMenuFunction} : menuProp):JSX.Element{
+    const location = useLocation().pathname;
+    
     const menuBodyAnim = {
         initial:{
             display:'none',
@@ -90,11 +98,10 @@ function MenuBody({isOpen} : menuProp):JSX.Element{
             scaleY:'100%',
         }
     }
+    const raw = [{link:"/",title:"HOME"},{link:"/shop",title:"SHOP"},{link:"/rent",title:"RENT"},{link:"/dealers",title:"DEALERS"},]
+    const refined = raw.filter(function(data){ return data.link != location})
     return <motion.div initial = "initial" animate = {isOpen?"open" : "initial"} variants={menuBodyAnim} id="menuBody">
-            <Link to="/shop"  className="navLinks" > Shop</Link>
-            <Link to="/rent" className="navLinks"  >Rent</Link>
-            <Link to="/dealers"  className="navLinks" >Dealers</Link>
-            <Link to="/more"  className="navLinks" >More</Link>
+            {refined.map(function(info){return <div onClick={()=>{closeMenuFunction(false)}} ><Link to={info.link}  className="navLinks" > {info.title}</Link></div> })}
             </motion.div>
 }
 
