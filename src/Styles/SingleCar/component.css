@@ -168,6 +168,7 @@
   background-color: aquamarine;
   border-top-left-radius: 1.5em;
   border-bottom-right-radius: 1.5em;
+  font-size: 1.5em;
 }
 
 @media (orientation: landscape) {

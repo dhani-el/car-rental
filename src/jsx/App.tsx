@@ -4,6 +4,7 @@ import Auth from './Auth/auth';
 import Rent from './Rent/index';
 import SingleCar from './SingleCar/index';
 import Layout from './Layout/layout';
+// import ComingSoon from './Soon';
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
@@ -29,9 +30,14 @@ const route  = createBrowserRouter([
         {
           path:'/rent/:brand',
           element:<SingleCar/>
-        }
+        },
+    //     {
+    //   path:'*',
+    //   element:<ComingSoon/>
+    // }
       ]
     },
+
 
 ]);
 
