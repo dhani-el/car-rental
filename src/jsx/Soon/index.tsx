@@ -1,8 +1,8 @@
-// import { Center } from "./component"
+import { Center } from "./component"
 
 
-// export default function ComingSoon():JSX.Element{
-//     return <div>
-//                 <Center/>
-//         </div>
-// }
+export default function ComingSoon():JSX.Element{
+    return <div>
+                <Center/>
+        </div>
+}

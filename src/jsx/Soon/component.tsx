@@ -1,9 +1,9 @@
-// import '../../Styles/Soon/component.css'
+import '../../Styles/Soon/component.css'
 
 
-// export function Center():JSX.Element{
-//     return <div id='centerDiv'>
+export function Center():JSX.Element{
+    return <div id='centerDiv'>
 
-//             </div>
-// }
+            </div>
+}
 
