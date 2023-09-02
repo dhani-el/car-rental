@@ -6,7 +6,7 @@ const ListOfCars = {
     "Aston Martin":AstonMartin,
     "Bently":Bently,
     "Bugatti":Bugatti,
-    "Mercedes Benz":MercedesBenz,
+    "MercedesBenz":MercedesBenz,
     "Cadillac":Cadillac,
     "Chevrolet":Chevrolet,
     "Dodge":Dodge,

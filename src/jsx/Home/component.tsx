@@ -1,17 +1,21 @@
-import { useEffect, useRef} from 'react';
+import { useEffect, useRef, useLayoutEffect} from 'react';
 import { Button } from "@mui/material";
 import Swipe from "@mui/icons-material/Swipe";
 import { Canvas, useLoader} from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls, MeshReflectorMaterial, PerspectiveCamera } from '@react-three/drei';
 import {LinearEncoding, RepeatWrapping, TextureLoader} from 'three';
+import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
+import SplashImage from "/one.png";
 import '../../Styles/Home/component.css';
 
+type bodyArgType = {
+    removeSplash: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-
-export default function Body():JSX.Element{
+export default function Body({removeSplash}:bodyArgType):JSX.Element{
     const isLandScape  = useMediaQuery({query: '(orientation:landscape)'});
     return <div id = "bodyDiv">
                 <div id='abslouteContentContainer'>
@@ -23,7 +27,7 @@ export default function Body():JSX.Element{
                     </div>
                     <CallToAction/>
                 </div>
-                <Modelo/>
+                <Modelo removeSplash={removeSplash}/>
             </div>
 }
 
@@ -60,7 +64,7 @@ function CallToAction():JSX.Element{
         </div>
 }
 
-function Modelo():JSX.Element{
+function Modelo({removeSplash}:bodyArgType):JSX.Element{
     const spinIndicatorRef = useRef(null);
 
     function removeSpinIndicator():void{
@@ -74,7 +78,7 @@ function Modelo():JSX.Element{
             <ambientLight intensity = {1} color={"white"} />
             <directionalLight intensity={1}  position={[0,5,0]} />
             <spotLight color={"white"} angle={0.15} distance={8} intensity={40} penumbra={10} position={[0,3,0]} />
-            <HomeCarModel  />
+            <HomeCarModel removeSplash={removeSplash}  />
             <Ground/>
         </Canvas>
         <div id='spinIndicator' ref={spinIndicatorRef} >
@@ -83,11 +87,15 @@ function Modelo():JSX.Element{
     </div>
 }
 
-function HomeCarModel():JSX.Element{
+function HomeCarModel({removeSplash}:bodyArgType):JSX.Element{
     const isLandScape  = useMediaQuery({query: '(orientation:landscape)'});
     const scale  = isLandScape ? ([0.005,0.005,0.005]) : ([0.0020,0.0020,0.0020]);
     const position  = isLandScape ? ([0,0.68,0.5]) : ([1,0.68,1.4]);
     const Scene = useLoader(GLTFLoader,'/lambo.glb');
+
+    useLayoutEffect(function(){
+        removeSplash(false)
+    },[])
     return <>
                 <OrbitControls target={[0,0.35,0]}  maxPolarAngle={1.45} enablePan = {false} enableZoom = {false} />
                 <PerspectiveCamera makeDefault fov={50} position={[3,2,5]} />
@@ -135,3 +143,21 @@ function Ground():JSX.Element{
             </mesh>
 }
 
+export function SplashScreen():JSX.Element{
+    const anim = {
+        animate:{
+            scaleX:1.2,
+            scaleY:1.2,
+            transition:{
+                duration:1,
+                repeat:"Infinity",
+                repeatType:"reverse"
+            }
+        }
+    }
+    return <div id='splashHighestDiv'>
+                <motion.div id='imageContainer' animate = {"animate"} variants ={anim}>
+                    <img src={SplashImage} id='image' />
+                </motion.div>
+        </div>
+}
