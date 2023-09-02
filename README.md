@@ -36,6 +36,7 @@ This is a project built in order to work with and learn more about certain techn
 - TypeScript
 - Material Ui
 - Framer Motion
+- Tanstack Query(React Query)
 
 ### What I learned
 
