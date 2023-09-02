@@ -25,7 +25,7 @@ const ListOfBrands = [{img:astonMartin,name:"Aston Martin"},{img:audi,name:"Audi
                         {img:dodge,name:"Dodge"},{img:porsche1,name:"Porsche"},{img:ford,name:"Ford"},
                         {img:gmc,name:"Gmc"},{img:jaguar,name:"Jaguar"},
                         {img:lamborghini,name:"Lamborghini"},{img:lexus,name:"Lexus"},
-                        {img:mcLaren,name:"McLaren"},{img:mercedesBenz1,name:"Mercedes Benz"},
+                        {img:mcLaren,name:"McLaren"},{img:mercedesBenz1,name:"MercedesBenz"},
                         {img:miniCooper,name:"Mini Cooper"},{img:nissan,name:"Nissan"},
                       {img:ferrari,name:"Ferrari"},{img:maserati,name:"Maserati"}]
 
