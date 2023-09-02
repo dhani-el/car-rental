@@ -109,9 +109,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 #splashHighestDiv #imageContainer {
-  width: 85vw;
+  width: 60vw;
   height: auto;
 }
 #splashHighestDiv #imageContainer #image {

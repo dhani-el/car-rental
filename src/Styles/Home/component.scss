@@ -115,8 +115,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: black;
+    position:absolute;
+    top: 0;
+    left:0;
     #imageContainer{
-        width: 85vw;
+        width: 60vw;
         height: auto;
         #image{
             width: 100%;
