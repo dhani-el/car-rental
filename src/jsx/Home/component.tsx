@@ -7,6 +7,7 @@ import { OrbitControls, MeshReflectorMaterial, PerspectiveCamera } from '@react-
 import {LinearEncoding, RepeatWrapping, TextureLoader} from 'three';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
+import SplashImage from "/one.png";
 import '../../Styles/Home/component.css';
 
 
@@ -135,3 +136,10 @@ function Ground():JSX.Element{
             </mesh>
 }
 
+export function SplashScreen():JSX.Element{
+    return <div id='splashHighestDiv'>
+                <div id='imageContainer'>
+                    <img src={SplashImage} id='image' />
+                </div>
+        </div>
+}
