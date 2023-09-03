@@ -1,108 +1,21 @@
-import {useState, useEffect, useRef} from 'react';
+import { useEffect, useRef, useLayoutEffect} from 'react';
 import { Button } from "@mui/material";
-import {User} from 'react-feather';
 import Swipe from "@mui/icons-material/Swipe";
-import ViewList from '@mui/icons-material/ViewList';
-import {Close} from '@mui/icons-material';
-import {motion} from 'framer-motion';
 import { Canvas, useLoader} from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls, MeshReflectorMaterial, PerspectiveCamera } from '@react-three/drei';
 import {LinearEncoding, RepeatWrapping, TextureLoader} from 'three';
+import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
+import SplashImage from "/one.png";
 import '../../Styles/Home/component.css';
-import LogoImage from '/one.png';
 
-type authProp =  {
-    loggedIn:boolean
+type bodyArgType = {
+    removeSplash: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-type userProp = {
-    name:string
-}
-
-type menuProp = { isOpen : boolean}
-
-export function Header():JSX.Element{
-    return <div id = "header">
-             <Logo/>
-             <NavBar/>
-             <Authenticator loggedIn = {false} />
-             <Menu/>
-        </div>
-}
-
-function Logo():JSX.Element{
-    return <div id="logo">
-        <img src={LogoImage} alt='lunder rentals logo' />
-    </div>
-}
-
-function NavBar():JSX.Element{
-    return <div id="navBar" >
-            <Link to="/shop"  className="navLinks" > Shop</Link>
-            <Link to="/rent" className="navLinks"  >Rent</Link>
-            <Link to="/dealers"  className="navLinks" >Dealers</Link>
-            <Link to="/more"  className="navLinks" >More</Link>
-    </div>
-}
-
-function Authenticator(loginProp:authProp):JSX.Element{
-    return <div id="authenticator" >
-        {loginProp.loggedIn ? <UserComponent name="omotayo" /> : <AuthButton/> }
-    </div>
-}
-
-function UserComponent(user:userProp): JSX.Element{
-    return <div id="userDiv" >
-        <User/>
-        <p>hi, {user.name} </p>
-    </div>
-}
-
-function AuthButton():JSX.Element{
-    return <div id="authButtonDiv">
-                <Link to='/auth'><Button variant="outlined" id="loginButton">LOG IN</Button> </Link>
-                <Link to='/auth'><Button variant="outlined" id="signupButton">SIGN UP</Button> </Link>
-    </div>
-}
-
-function Menu():JSX.Element{
-    const [isOpen,setIsOpen] = useState(false);
-
-    return <div id="menu">
-                <motion.div onClick={()=>{setIsOpen((!isOpen))}} >
-                   { isOpen ? <Close id ="menuCloseIcon" className='menuIcons' /> :<ViewList id = "menuListIcon" className='menuIcons'/> }
-                </motion.div>
-                <MenuBody isOpen={isOpen} />
-        </div>
-}
-
-function MenuBody({isOpen} : menuProp):JSX.Element{
-    const menuBodyAnim = {
-        initial:{
-            display:'none',
-            scaleX:'0%',
-            scaleY:'0%',
-            opacity:0,
-        },
-        open:{
-            display:'flex',
-            opacity:1,
-            scaleX:'100%',
-            scaleY:'100%',
-        }
-    }
-    return <motion.div initial = "initial" animate = {isOpen?"open" : "initial"} variants={menuBodyAnim} id="menuBody">
-            <Link to="/shop"  className="navLinks" > Shop</Link>
-            <Link to="/rent" className="navLinks"  >Rent</Link>
-            <Link to="/dealers"  className="navLinks" >Dealers</Link>
-            <Link to="/more"  className="navLinks" >More</Link>
-            </motion.div>
-}
-
-export function Body():JSX.Element{
+export default function Body({removeSplash}:bodyArgType):JSX.Element{
     const isLandScape  = useMediaQuery({query: '(orientation:landscape)'});
     return <div id = "bodyDiv">
                 <div id='abslouteContentContainer'>
@@ -114,7 +27,7 @@ export function Body():JSX.Element{
                     </div>
                     <CallToAction/>
                 </div>
-                <Modelo/>
+                <Modelo removeSplash={removeSplash}/>
             </div>
 }
 
@@ -147,11 +60,11 @@ function Paragraph():JSX.Element{
 
 function CallToAction():JSX.Element{
     return <div id='callToActionDiv' >
-            <Link to='/rent' ><Button variant='contained' >RENT NOW</Button></Link>
+           <Link to='/rent' > <Button variant='contained' ><p>RENT NOW</p></Button></Link>
         </div>
 }
 
-function Modelo():JSX.Element{
+function Modelo({removeSplash}:bodyArgType):JSX.Element{
     const spinIndicatorRef = useRef(null);
 
     function removeSpinIndicator():void{
@@ -160,12 +73,12 @@ function Modelo():JSX.Element{
             return
         }
     }
-    return <div id='model' onClick={removeSpinIndicator}>
+    return <div id='model'onTouchMove={removeSpinIndicator} onMouseDown={removeSpinIndicator} >
         <Canvas shadows >
             <ambientLight intensity = {1} color={"white"} />
             <directionalLight intensity={1}  position={[0,5,0]} />
             <spotLight color={"white"} angle={0.15} distance={8} intensity={40} penumbra={10} position={[0,3,0]} />
-            <HomeCarModel  />
+            <HomeCarModel removeSplash={removeSplash}  />
             <Ground/>
         </Canvas>
         <div id='spinIndicator' ref={spinIndicatorRef} >
@@ -174,16 +87,21 @@ function Modelo():JSX.Element{
     </div>
 }
 
-function HomeCarModel():JSX.Element{
+function HomeCarModel({removeSplash}:bodyArgType):JSX.Element{
     const isLandScape  = useMediaQuery({query: '(orientation:landscape)'});
-    const scale  = isLandScape ? ([0.005,0.005,0.005]) : ([0.0020,0.0020,0.0020])
+    const scale  = isLandScape ? ([0.005,0.005,0.005]) : ([0.0020,0.0020,0.0020]);
+    const position  = isLandScape ? ([0,0.68,0.5]) : ([1,0.68,1.4]);
     const Scene = useLoader(GLTFLoader,'/lambo.glb');
+
+    useLayoutEffect(function(){
+        removeSplash(false)
+    },[])
     return <>
                 <OrbitControls target={[0,0.35,0]}  maxPolarAngle={1.45} enablePan = {false} enableZoom = {false} />
                 <PerspectiveCamera makeDefault fov={50} position={[3,2,5]} />
                 <color args={[0,0,0]} attach= 'background' />
                 <mesh receiveShadow = {true} castShadow={true} > 
-                    <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {scale} position = {[1,1,1.2]}  receiveShadow = {true}  />
+                    <primitive castShadow object={Scene.scene} rotation = {[0,2,0]} scale = {scale} position = {position}  receiveShadow = {true}  />
                 </mesh>
             </>
 }
@@ -201,22 +119,22 @@ function Ground():JSX.Element{
     }, [normal,roughness]);
 
     return <mesh rotation-x = {-Math.PI * 0.5} castShadow receiveShadow >
-                <planeGeometry args={[30,30]} />
+                <planeGeometry args={[15,15]} />
                 <MeshReflectorMaterial 
                 envMapIntensity={0}
                 normalMap={normal}
-                // normalScale = {[0.15,0.15]}
+                normalScale = {[0.15,0.15]}
                 roughnessMap={roughness}
                 dithering = {true}
                 color={[0.015,0.015,0.015]}
-                roughness={0.7}
+                roughness={1}
                 blur={[1000,400]}
                 mixBlur={30}
                 mixStrength={80}
                 mixContrast={1}
                 resolution={1024}
                 mirror={0}
-                depthScale={0.01}
+                depthScale={0.04}
                 minDepthThreshold={0.9}
                 // debug = {0}
                 maxDepthThreshold={1}
@@ -225,21 +143,21 @@ function Ground():JSX.Element{
             </mesh>
 }
 
-export function Footer():JSX.Element{
-    return <div id='footerContainer'>
-        <Logo/>
-        <div id='quickLinks'>
-            <Link to='/'>Home</Link>
-            <Link to='/dealers'>Dealers</Link>
-            <Link to='/branches' >Branches</Link>
-            <Link to='/rent' >Rent a Car</Link>
-            <Link to='/delivery' >Pick Up</Link>
-            <Link to='/contact' >Contact Us</Link>
-            <Link to='/careers' >Careers</Link>
-            <Link to='/credit' >Credits</Link>
+export function SplashScreen():JSX.Element{
+    const anim = {
+        animate:{
+            scaleX:1.2,
+            scaleY:1.2,
+            transition:{
+                duration:1,
+                repeat:"Infinity",
+                repeatType:"reverse"
+            }
+        }
+    }
+    return <div id='splashHighestDiv'>
+                <motion.div id='imageContainer' animate = {"animate"} variants ={anim}>
+                    <img src={SplashImage} id='image' />
+                </motion.div>
         </div>
-        <div id='boilerPlateContent' >
-
-        </div>
-    </div>
 }

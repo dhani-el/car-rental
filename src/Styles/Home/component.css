@@ -14,49 +14,6 @@
   width: 0;
 }
 
-#header {
-  display: flex;
-  margin: 1.5em;
-  justify-content: space-between;
-  align-items: center;
-}
-#header #navBar {
-  display: none;
-}
-#header #authButtonDiv {
-  display: none;
-}
-#header #menu #menuBody {
-  display: none;
-  opacity: 0;
-  position: fixed;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  z-index: 10;
-}
-#header #menu #menuBody a {
-  color: black;
-  text-decoration: none;
-  font-size: 2em;
-}
-#header #menu .menuIcons {
-  position: relative;
-  z-index: 11;
-}
-#header #logo {
-  width: 8em;
-}
-#header #logo img {
-  width: 100%;
-  height: auto;
-}
-
 #bodyDiv {
   position: relative;
   height: 90vh;
@@ -112,14 +69,16 @@
   justify-content: center;
 }
 #bodyDiv #abslouteContentContainer #callToActionDiv button {
-  background-color: aquamarine;
-  border: 0.11em rgb(148, 244, 23) solid;
-  box-shadow: 2px 2px;
+  background-color: rgb(148, 244, 23);
+  box-shadow: rgb(148, 244, 23) 4px 4px 6px 6px;
   color: rgb(0, 0, 0);
   font-family: "Courier New", Courier, monospace;
-  padding: none;
   position: absolute;
   top: 80vh;
+}
+#bodyDiv #abslouteContentContainer #callToActionDiv button a {
+  text-decoration: none;
+  color: black;
 }
 #bodyDiv #abslouteContentContainer #callToActionDiv button * {
   padding: none;
@@ -138,87 +97,33 @@
   position: relative;
   width: -moz-min-content;
   width: min-content;
-  bottom: 40%;
-  left: 50%;
+  bottom: 50%;
+  left: 48%;
 }
 
-#footerContainer {
-  margin-top: 2em;
-  height: 35vh;
+#splashHighestDiv {
   width: 100vw;
-  background-color: rgb(28, 28, 28);
-}
-#footerContainer #logo {
-  width: 8em;
-  margin-left: 2em;
-}
-#footerContainer #logo img {
-  width: 100%;
-  height: auto;
-  opacity: 0.4;
-}
-#footerContainer #quickLinks {
+  height: 100vh;
+  overflow: hidden;
+  z-index: 100;
   display: flex;
-  width: 100%;
-  height: 70%;
-  flex-wrap: wrap;
   align-items: center;
-  padding: 2em;
+  justify-content: center;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-#footerContainer #quickLinks a {
-  width: 30vw;
+#splashHighestDiv #imageContainer {
+  width: 60vw;
+  height: auto;
+}
+#splashHighestDiv #imageContainer #image {
+  width: 100%;
+  height: 100%;
 }
 
 @media (orientation: landscape) {
-  #header {
-    margin: 1.5em 3em;
-    justify-content: space-between;
-  }
-  #header #authenticator {
-    display: flex;
-  }
-  #header #authenticator #userDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #header #authButtonDiv {
-    display: flex;
-    align-items: center;
-    gap: 1vw;
-  }
-  #header #authButtonDiv button {
-    font-size: 0.5em;
-    color: black;
-    line-height: 0;
-    text-transform: none;
-    letter-spacing: 0;
-    padding: 1.5em;
-    font-weight: 900;
-    width: 2em;
-    border-color: black;
-    background-color: whitesmoke;
-  }
-  #header #authButtonDiv button span {
-    line-height: 0;
-    text-transform: none;
-  }
-  #header #navBar {
-    display: flex;
-    gap: 2vw;
-    align-items: center;
-    font-weight: 700;
-  }
-  #header #navBar a {
-    color: rgb(206, 202, 202);
-    text-decoration: none;
-  }
-  #header #navBar .navLinks:hover {
-    color: white;
-  }
-  #header #menu {
-    display: none;
-  }
   #bodyDiv #abslouteContentContainer {
     position: relative;
     justify-content: space-between;
@@ -262,6 +167,9 @@
     align-self: center;
     position: static;
   }
+  #bodyDiv #abslouteContentContainer #callToActionDiv button {
+    top: 70vh;
+  }
   #bodyDiv #model {
     position: absolute;
     top: 0;
@@ -273,5 +181,22 @@
     position: relative;
     bottom: 40%;
     left: 50%;
+  }
+  #splashHighestDiv {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #splashHighestDiv #imageContainer {
+    width: 35vw;
+    height: auto;
+  }
+  #splashHighestDiv #imageContainer #image {
+    width: 100%;
+    height: 100%;
   }
 }/*# sourceMappingURL=component.css.map */
