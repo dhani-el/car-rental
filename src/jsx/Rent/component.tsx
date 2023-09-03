@@ -4,8 +4,12 @@ import { Search, Close } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 import 'swiper/css'
 import '../../Styles/Rent/component.css';
+
+axios.defaults
 
 
 type searchType = {
@@ -41,13 +45,25 @@ export function SearchComponent():JSX.Element{
 
 function SearchBar({handleClickFunction}:searchType):JSX.Element{
     return <div id="searchBar">
-        <TextField placeholder='Car brand' /> 
-        <Close onClick = {()=>handleClickFunction()} />
+                <TextField placeholder='Car brand' /> 
+                <Close onClick = {()=>handleClickFunction()} />
     </div>
 }
 
 export function Brands({brands,handleBrandChange}:brandType):JSX.Element{
 const isLandscape = useMediaQuery({query:'(orientation:landscape)'});
+const brandData  = useQuery({
+    queryKey : ["brands"],
+    queryFn : function(){
+        return axios.get("http://localhost:3000/brands",{
+            withCredentials:true
+        })
+        .then(function(response){ return response})
+        .catch(function(error){console.log(error)
+                return -1})
+    }
+});
+const confirmNature = [...brandData.data];
 console.log(isLandscape);
 
 
@@ -55,7 +71,8 @@ console.log(isLandscape);
         <div id='brandsSwiperContainer'>
             <Swiper spaceBetween={10} slidesPerView={isLandscape? 8 : 4} id='slideR' >
                 <SwiperSlide><AllBrands  handleClick = {handleBrandChange} /></SwiperSlide>
-                {brands.map(brandImage => <SwiperSlide key={brandImage.name} ><Abrand image = {brandImage} handleClick = {handleBrandChange} /></SwiperSlide>)}
+                {brandData.isError && <div>an error occured</div>}
+                {brandData.isFetched && confirmNature.map(brandImage => <SwiperSlide key={brandImage.name} ><Abrand image = {brandImage} handleClick = {handleBrandChange} /></SwiperSlide>)}
             </Swiper>
         </div>
     </div>
