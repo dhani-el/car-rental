@@ -17,13 +17,7 @@ type searchType = {
 }
 
 type brandType  = {
-    brands : any[],
     handleBrandChange: React.Dispatch<React.SetStateAction<string>>
-}
-
-type carsType = {
-    ListOfCars : any[],
-    brand:string
 }
 
 export function SearchComponent():JSX.Element{
@@ -50,20 +44,19 @@ function SearchBar({handleClickFunction}:searchType):JSX.Element{
     </div>
 }
 
-export function Brands({brands,handleBrandChange}:brandType):JSX.Element{
+export function Brands({handleBrandChange}:brandType):JSX.Element{
 const isLandscape = useMediaQuery({query:'(orientation:landscape)'});
 const brandData  = useQuery({
     queryKey : ["brands"],
-    queryFn : function(){
-        return axios.get("http://localhost:3000/brands",{
-            withCredentials:true
+    queryFn : async function(){
+        return axios.get("/brands",{
+            withCredentials:true,
         })
         .then(function(response){ return response})
-        .catch(function(error){console.log(error)
-                return -1})
+        .catch(function(error){console.log(error)})
     }
 });
-const confirmNature = [...brandData.data];
+const confirmNature = [brandData?.data];
 console.log(isLandscape);
 
 
@@ -72,7 +65,7 @@ console.log(isLandscape);
             <Swiper spaceBetween={10} slidesPerView={isLandscape? 8 : 4} id='slideR' >
                 <SwiperSlide><AllBrands  handleClick = {handleBrandChange} /></SwiperSlide>
                 {brandData.isError && <div>an error occured</div>}
-                {brandData.isFetched && confirmNature.map(brandImage => <SwiperSlide key={brandImage.name} ><Abrand image = {brandImage} handleClick = {handleBrandChange} /></SwiperSlide>)}
+                {brandData.isFetched && confirmNature.map(brandImage => <SwiperSlide key={brandImage?.data.name} ><Abrand image = {brandImage?.data.imageUrl} handleClick = {handleBrandChange} /></SwiperSlide>)}
             </Swiper>
         </div>
     </div>
@@ -94,10 +87,19 @@ function AllBrands({handleClick}:allBrand){
     </div>
 }
 
-export function Cars({ListOfCars,brand}:carsType):JSX.Element{
+export function Cars():JSX.Element{
+    const data = useQuery({
+        queryKey:["carData"],
+        queryFn : async function(){
+                    return axios.get("/cars/all",{
+                        withCredentials:true
+                    })
+        }
+    })
+    const convertedData = [data.data]
     return <div id='carsContainer'>
                 <h3  style={{color:"black"}} >AVAILABLE CARS</h3>
-                <div id='listOfCars'>{ListOfCars.map((single)=><div key={single.model} id='keyDivs' ><Car car = {single} brand = {brand}  /></div>)}</div>
+                <div id='listOfCars'>{convertedData.map((single)=><div key={single?.data.model} id='keyDivs' ><Car car = {single?.data} brand = {single?.data.brand}  /></div>)}</div>
     </div>
 }
 
