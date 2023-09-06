@@ -40,6 +40,7 @@
         .menuIcons{
             position: relative;
             z-index: 11;
+            color: rgb(154, 152, 152);
         }
     }
     #logo{
@@ -77,6 +78,7 @@
                 color: rgb(170, 170, 170);
                 text-decoration: none;
                 text-align: center;
+                text-transform: uppercase;
             }
         }
     }

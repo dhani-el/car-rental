@@ -97,8 +97,30 @@
   position: relative;
   width: -moz-min-content;
   width: min-content;
-  bottom: 40%;
-  left: 50%;
+  bottom: 50%;
+  left: 48%;
+}
+
+#splashHighestDiv {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#splashHighestDiv #imageContainer {
+  width: 60vw;
+  height: auto;
+}
+#splashHighestDiv #imageContainer #image {
+  width: 100%;
+  height: 100%;
 }
 
 @media (orientation: landscape) {
@@ -159,5 +181,22 @@
     position: relative;
     bottom: 40%;
     left: 50%;
+  }
+  #splashHighestDiv {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #splashHighestDiv #imageContainer {
+    width: 35vw;
+    height: auto;
+  }
+  #splashHighestDiv #imageContainer #image {
+    width: 100%;
+    height: 100%;
   }
 }/*# sourceMappingURL=component.css.map */

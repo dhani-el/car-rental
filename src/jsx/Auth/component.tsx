@@ -1,9 +1,10 @@
-import { useState, ChangeEvent} from "react";
+import { useState ,ChangeEvent} from "react";
 import { motion } from "framer-motion" ;
 import { Box, TextField, Button, Card } from "@mui/material";
 import { formType } from './constant';
-
 import '../../Styles/Auth/component.css';
+import { useAppDispatch } from "../../Store/store";
+import { setUserLoggedin } from "../../Store/authReducer";
 
 type authProp = {
     setFormFunction : Function,
@@ -12,35 +13,35 @@ type authProp = {
 export function Login():JSX.Element{
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const dispatch = useAppDispatch();
 
-    function handleInputChange(e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, setFunc:Function):void{
+
+    function handleInputChange(e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement><HTMLInputElement | HTMLTextAreaElement>, setFunc:Function):void{
         if(e != null){
             setFunc(e.target.value);
         }
     }
-
     function handleLoginClick():void{
         if (checkFields([userName,password]) > 0) {
             return
         }
         logUserIn()
     }
-
     function checkFields(fields:string[]):number{
         let fieldHealth : string[] = fields.filter(function(fieldValue){
                 return fieldValue == ''
         })
         return fieldHealth.length
     }
-
     function logUserIn():void{
         const username  = localStorage.getItem(userName);
         const passcode  = localStorage.getItem(`${password}${userName}`);
-        console.log((username != null && passcode != null) ? 'logged in' : "invalid login details");
-        
+        console.log((username != null && passcode != null) ? indicateUserLoggedIn() : "invalid login details");
     }
-
-
+    function indicateUserLoggedIn(){
+        dispatch(setUserLoggedin({isUserLoggedIn:true,username:userName}));
+        console.log('user logged in');
+    }
     return <motion.div className="formDiv" id="logInForm" >
                 <Box component='form' className="form"  >
                     <Card className="card" >
