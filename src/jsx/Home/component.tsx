@@ -65,7 +65,7 @@ function Modelo():JSX.Element{
 
     function removeSpinIndicator():void{
         if(spinIndicatorRef.current !== null ){
-            spinIndicatorRef.current.style.display = "none"
+            // spinIndicatorRef.current.display = "none"
             return
         }
     }

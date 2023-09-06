@@ -1,5 +1,4 @@
 // import { useSearchParams,useParams } from "react-router-dom";
-// import { CarDatabase } from "../../utils/data";
 import { Search } from "@mui/icons-material";
 import { CarImage,CarDescription, CarPrice } from "./component";
 import image from '/imageOne.png';

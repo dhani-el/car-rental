@@ -1,5 +1,5 @@
 import { SearchComponent, Brands,Cars} from "./component"
-import { useSearchParams, useParams } from "react-router-dom"
+// import { useSearchParams, useParams } from "react-router-dom"
 import { ListOfCars, notActualCar,notActualCar1 } from "../../utils/data"
 export default function Rent():JSX.Element{
         // const [searchParms, setSearchParma] = useSearchParams();

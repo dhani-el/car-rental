@@ -13,7 +13,7 @@ export function Login():JSX.Element{
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
-    function handleInputChange(e:ChangeEvent, setFunc:Function):void{
+    function handleInputChange(e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, setFunc:Function):void{
         if(e != null){
             setFunc(e.target.value);
         }
@@ -62,7 +62,7 @@ export function SignUp():JSX.Element{
     const [email , setEmail] = useState('');
     const [password , setPassword] = useState('');
 
-    function handleInputChange(e:ChangeEvent, setFunc:Function):void{
+    function handleInputChange(e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, setFunc:Function):void{
         if(e != null){
             setFunc(e.target.value);
         }
