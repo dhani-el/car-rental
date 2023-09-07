@@ -2,7 +2,7 @@ import {useQuery} from "@tanstack/react-query";
 import axios from "axios"
 import { Search } from "@mui/icons-material";
 import { CarImage,CarDescription, CarPrice } from "./component";
-import {useSearchParams} from 'react-router-dom';
+import {useSearchParams,} from 'react-router-dom';
 
 const location ={
     address:"5,Mufutau Shobola, Ogba Lagos,Nigeria",
@@ -38,13 +38,13 @@ export default function SingleCar():JSX.Element{
     const {data} = useQuery({
         queryKey:["singleData"],
         queryFn: async function(){
-            return axios.get(`/car/${model}`);
+            return axios.get(`/data/api/car/${model}`);
         }
     })
     
     return <div id="singleCarContainer">
-            <CarImage image={data?.data.image} logo={data?.data.logo} title={data?.data.model} year={data?.data.year}/>
-            <CarDescription  carFeatures={features} location={location}/>
+            <CarImage image={data?.data.image} logo={data?.data.logo} title={data?.data.name} year={data?.data.year}/>
+            <CarDescription  carFeatures={features} location={location} list={data?.data.featureDescription} />
             <CarPrice price="N120k"/>
     </div>
 }

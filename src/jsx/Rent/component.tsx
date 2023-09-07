@@ -67,8 +67,8 @@ console.log(data?.data);
     return <div id='brandsContainer'>
         <div id='brandsSwiperContainer'>
             <Swiper spaceBetween={10} slidesPerView={isLandscape? 8 : 4} id='slideR' >
-                <SwiperSlide><AllBrands  handleClick = {handleBrandChange} /></SwiperSlide>
-               {data?.data.map((brandImage:{name:string,logo:string}) => <SwiperSlide key={brandImage?.name} ><Abrand image = {brandImage?.logo} handleClick = {handleBrandChange} /></SwiperSlide>)}
+                <SwiperSlide><AllBrands  handleClick = {()=>handleBrandChange('all')} /></SwiperSlide>
+               {data?.data.map((brandImage:{name:string,logo:string}) => <SwiperSlide key={brandImage?.name} ><Abrand image = {brandImage?.logo} handleClick = {()=>handleBrandChange(brandImage?.name)} /></SwiperSlide>)}
             </Swiper>
         </div>
     </div>
@@ -77,7 +77,7 @@ console.log(data?.data);
 function Abrand({image,handleClick}:any):JSX.Element{
     return <div id = 'abrandDiv' onClick={function(){handleClick(`${image.name}`);
     }} >
-        <img src={image.logo} />
+        <img src={image} />
     </div>
 }
 
@@ -90,31 +90,29 @@ function AllBrands({handleClick}:allBrand){
     </div>
 }
 
-export function Cars():JSX.Element{
+export function Cars({brand}:any):JSX.Element{
     const {data} = useQuery({
         queryKey:["carData"],
-        queryFn : ()=>  Axios.get('data/api/cars/all', { withCredentials:true})
+        queryFn : ()=>  Axios.get(`data/api/cars/${brand}`, { withCredentials:true})
                         .then(function(result){ return result})
     })
 
     console.log('confirm the cars data below');
     console.log(data?.data);
     
-    
-    
     return <div id='carsContainer'>
                 <h3  style={{color:"black"}} >AVAILABLE CARS</h3>
-                <div id='listOfCars'>{data?.data.map((single:brand)=><div key={single?._id} id='keyDivs' ><Car car = {single} brand = {single?.brand}  /></div>)}</div>
+                <div id='listOfCars'>{data?.data.map((single:brand)=><div key={single?._id} id='keyDivs' ><Car car = {single} /></div>)}</div>
     </div>
 }
 
-function Car({car,brand}:any):JSX.Element{
+function Car({car}:any):JSX.Element{
     return <div id='Acar'>
                 <Card className='aCarCard' >
                     <div id='firstDiv'>
                         <img src={car.image} /> 
                     <div id='textDiv'>
-                            <h3>{car.model}</h3>
+                            <h3>{car.name}</h3>
                             <p>{car.year}</p>
                         </div>
                     </div>
@@ -122,7 +120,7 @@ function Car({car,brand}:any):JSX.Element{
                     <span id='priceSpan'>
                         <p id='price' >{car.price}</p><p >/day</p>
                     </span>
-                    <Link to={`/rent/${brand}?model=${car.model}`}><span id='detailsSpan'>
+                    <Link to={`/rent/${car.brand}?model=${car.name}`}><span id='detailsSpan'>
                        DETAILS
                     </span></Link>
                     </div>
