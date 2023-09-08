@@ -23,7 +23,8 @@ type carText = {
 }
 
 type features = {
-    features:feature[]
+    features:feature[],
+    list:any[]
 }
 
 function CarImageText({logo,title,year}:carText):JSX.Element{
@@ -39,22 +40,22 @@ function CarImageText({logo,title,year}:carText):JSX.Element{
 type carDescriptionType = {
     carFeatures : feature[],
     location:carLocationType,
+    list:any[]
 }
 
-export function CarDescription({carFeatures,location}:carDescriptionType):JSX.Element{
+export function CarDescription({carFeatures,location,list}:carDescriptionType):JSX.Element{
     return <div id="descriptiveDiv">
-                <CarSpecification features={carFeatures} />
+                <CarSpecification list = {list} features={carFeatures} />
                 <CarLocation meters={location.meters} address={location.address}  />
             </div>
 }
 
- function CarSpecification({features}:features):JSX.Element{
+ function CarSpecification({features, list}:features):JSX.Element{
     return <div id='carSpecificationDiv'>
              <h2>SPECIFICATION</h2>
-             <Features features={features}/>
+             <Features features={features} list={list}/>
             </div>
 }
-
 function Features({features}:features):JSX.Element{
     return <div id="featuresDiv">
                 <Swiper spaceBetween={10} slidesPerView={2.4} id='swipeRR'>
@@ -66,13 +67,11 @@ function Features({features}:features):JSX.Element{
                 </Swiper>
             </div>
 }
-
 type feature = {
     Icon:any,
     featureValue:string,
     optFeature?:string | null
 }
-
 function Feature({Icon,featureValue,optFeature}:feature){
     return <div id='singleFeature'>
                 <Icon id ="icon" />
@@ -99,7 +98,6 @@ function CarLocation({meters,address}:carLocationType):JSX.Element{
                 </div>
     </div>
 }
-
 type priceType = {
     price:string
 }

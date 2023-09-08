@@ -36,6 +36,8 @@ This is a project built in order to work with and learn more about certain techn
 - TypeScript
 - Material Ui
 - Framer Motion
+- Tanstack Query(React Query)
+- Axios
 
 ### What I learned
 
@@ -68,7 +70,7 @@ I intend to attach an backend to this project with authentication , a user dashb
 
 ## Author
 
-- Website - [OMOTAYO DANIEL UKUHOR](https://www.coderosion.netlify.com);
+- Website - [DANIEL OMOTAYO UKUHOR](https://www.coderosion.netlify.com);
 - Twitter - [@coderosion](https://www.twitter.com/coderosion);
 - Linkedin - [daniel ukuhor](https://www.linkedin.com/daniel-coderosion);
 
