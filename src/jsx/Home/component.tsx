@@ -5,7 +5,7 @@ import { Canvas, useLoader} from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls, MeshReflectorMaterial, PerspectiveCamera } from '@react-three/drei';
 import {LinearEncoding, RepeatWrapping, TextureLoader} from 'three';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
 import SplashImage from "/one.png";
@@ -69,7 +69,8 @@ function Modelo({removeSplash}:bodyArgType):JSX.Element{
 
     function removeSpinIndicator():void{
         if(spinIndicatorRef.current !== null ){
-            // spinIndicatorRef.current.display = "none"
+            // temporary
+            // spinIndicatorRef.current?.style.display = "none"
             return
         }
     }
@@ -123,7 +124,7 @@ function Ground():JSX.Element{
                 <MeshReflectorMaterial 
                 envMapIntensity={0}
                 normalMap={normal}
-                normalScale = {[0.15,0.15]}
+                // normalScale = {[0.15,0.15]}
                 roughnessMap={roughness}
                 dithering = {true}
                 color={[0.015,0.015,0.015]}
@@ -144,20 +145,21 @@ function Ground():JSX.Element{
 }
 
 export function SplashScreen():JSX.Element{
-    const anim = {
-        animate:{
-            scaleX:1.2,
-            scaleY:1.2,
-            transition:{
-                duration:1,
-                repeat:"Infinity",
-                repeatType:"reverse"
-            }
-        }
-    }
+    // const anim = {
+    //     animate:{
+    //         scaleX:1.2,
+    //         scaleY:1.2,
+    //         transition:{
+    //             duration:1,
+    //             repeat:"Infinity",
+    //             repeatType:"reverse"
+    //         }
+    //     }
+    // }
     return <div id='splashHighestDiv'>
-                <motion.div id='imageContainer' animate = {"animate"} variants ={anim}>
+        {/* temporary */}
+                {/* <motion.div id='imageContainer' animate = {"animate"} variants ={anim}> */}
                     <img src={SplashImage} id='image' />
-                </motion.div>
+                {/* </motion.div> */}
         </div>
 }
