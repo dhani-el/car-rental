@@ -24,7 +24,6 @@ type menuProp = { isOpen : boolean, closeMenuFunction:Function}
 
 export function Header():JSX.Element{
     const loginData = useAppSelector(state => state.Authentication);
-    console.log(loginData.isUserLoggedIn);
     
     return <div id = "header">
              <Logo/>
@@ -46,7 +45,7 @@ function NavBar():JSX.Element{
     const refined = raw.filter(function(data){ return data.link != location});
 
     return <div id="navBar" >
-        {refined.map(function(info){return <Link to={info.link}  className="navLinks" > {info.title}</Link> })}
+        {refined.map(function(info){return <Link to={info.link}  className="navLinks" key={info.title} > {info.title}</Link> })}
     </div>
 }
 
@@ -101,7 +100,7 @@ function MenuBody({isOpen,closeMenuFunction} : menuProp):JSX.Element{
     const raw = [{link:"/",title:"HOME"},{link:"/shop",title:"SHOP"},{link:"/rent",title:"RENT"},{link:"/dealers",title:"DEALERS"},]
     const refined = raw.filter(function(data){ return data.link != location})
     return <motion.div initial = "initial" animate = {isOpen?"open" : "initial"} variants={menuBodyAnim} id="menuBody">
-            {refined.map(function(info){return <div onClick={()=>{closeMenuFunction(false)}} ><Link to={info.link}  className="navLinks" > {info.title}</Link></div> })}
+            {refined.map(function(info){return <div key={info.title} onClick={()=>{closeMenuFunction(false)}} ><Link to={info.link}  className="navLinks" > {info.title}</Link></div> })}
             </motion.div>
 }
 

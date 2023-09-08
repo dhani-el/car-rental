@@ -16,7 +16,7 @@ export function Login():JSX.Element{
     const dispatch = useAppDispatch();
 
 
-    function handleInputChange(e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement><HTMLInputElement | HTMLTextAreaElement>, setFunc:Function):void{
+    function handleInputChange(e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, setFunc:Function):void{
         if(e != null){
             setFunc(e.target.value);
         }
