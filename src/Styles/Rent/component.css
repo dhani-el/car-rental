@@ -186,4 +186,14 @@
     width: 100%;
     height: 10vh;
   }
+  #carsContainer #noCarsDiv {
+    height: inherit;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #carsContainer #noCarsDiv h2 {
+    text-align: center;
+  }
 }/*# sourceMappingURL=component.css.map */
