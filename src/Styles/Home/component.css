@@ -4,19 +4,29 @@
   box-sizing: border-box;
 }
 
-*::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 
-*::-webkit-scrollbar-track {
-  height: 0;
+*::-moz-scrollbar {
   width: 0;
+  height: 0;
+}
+
+*::-ms-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+* {
+  scrollbar-width: 0px;
 }
 
 #bodyDiv {
   position: relative;
   height: 90vh;
+  overflow-x: hidden;
 }
 #bodyDiv #abslouteContentContainer {
   display: flex;
