@@ -56,7 +56,6 @@ export function CarDescription({carFeatures,location,list}:carDescriptionType):J
              <Features features={features} list={list}/>
             </div>
 }
-
 function Features({features}:features):JSX.Element{
     return <div id="featuresDiv">
                 <Swiper spaceBetween={10} slidesPerView={2.4} id='swipeRR'>
@@ -68,13 +67,11 @@ function Features({features}:features):JSX.Element{
                 </Swiper>
             </div>
 }
-
 type feature = {
     Icon:any,
     featureValue:string,
     optFeature?:string | null
 }
-
 function Feature({Icon,featureValue,optFeature}:feature){
     return <div id='singleFeature'>
                 <Icon id ="icon" />
@@ -101,7 +98,6 @@ function CarLocation({meters,address}:carLocationType):JSX.Element{
                 </div>
     </div>
 }
-
 type priceType = {
     price:string
 }
