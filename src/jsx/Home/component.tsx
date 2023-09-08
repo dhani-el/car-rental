@@ -5,7 +5,7 @@ import { Canvas, useLoader} from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls, MeshReflectorMaterial, PerspectiveCamera } from '@react-three/drei';
 import {LinearEncoding, RepeatWrapping, TextureLoader} from 'three';
-// import { motion } from 'framer-motion';
+import { motion, Variants} from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
 import SplashImage from "/one.png";
@@ -65,12 +65,11 @@ function CallToAction():JSX.Element{
 }
 
 function Modelo({removeSplash}:bodyArgType):JSX.Element{
-    const spinIndicatorRef = useRef(null);
+    const spinIndicatorRef  = useRef<HTMLDivElement>(null);
 
     function removeSpinIndicator():void{
         if(spinIndicatorRef.current !== null ){
-            // temporary
-            // spinIndicatorRef.current?.style.display = "none"
+            spinIndicatorRef.current.style.display =  "none"
             return
         }
     }
@@ -145,21 +144,20 @@ function Ground():JSX.Element{
 }
 
 export function SplashScreen():JSX.Element{
-    // const anim = {
-    //     animate:{
-    //         scaleX:1.2,
-    //         scaleY:1.2,
-    //         transition:{
-    //             duration:1,
-    //             repeat:"Infinity",
-    //             repeatType:"reverse"
-    //         }
-    //     }
-    // }
+    const anim : Variants = {
+        animate:{
+            scaleX:1.2,
+            scaleY:1.2,
+            transition:{
+                duration:1,
+                repeat:Infinity,
+                repeatType:"reverse"
+            }
+        }
+    }
     return <div id='splashHighestDiv'>
-        {/* temporary */}
-                {/* <motion.div id='imageContainer' animate = {"animate"} variants ={anim}> */}
+                <motion.div id='imageContainer' animate = {"animate"} variants ={anim}>
                     <img src={SplashImage} id='image' />
-                {/* </motion.div> */}
+                </motion.div>
         </div>
 }
