@@ -91,18 +91,18 @@ function AllBrands({handleClick}:allBrand){
 }
 
 export function Cars({brand}:any):JSX.Element{
-    const {data} = useQuery({
+    const {data, isFetched} = useQuery({
         queryKey:["carData"],
         queryFn : ()=>  Axios.get(`data/api/cars/${brand}`, { withCredentials:true})
                         .then(function(result){ return result})
-    })
+    });
+    const [isCarsAvailable , setIsCarsAvailable] = useState(true);
 
-    console.log('confirm the cars data below');
-    console.log(data?.data);
-    
+    {isFetched && setIsCarsAvailable(Boolean(data?.data.length))}
     return <div id='carsContainer'>
                 <h3  style={{color:"black"}} >AVAILABLE CARS</h3>
-                <div id='listOfCars'>{data?.data.map((single:brand)=><div key={single?._id} id='keyDivs' ><Car car = {single} /></div>)}</div>
+                {isCarsAvailable ? <div id='listOfCars'>{data?.data.map((single:brand)=><div key={single?._id} id='keyDivs' ><Car car = {single} /></div>)}</div>
+                                 : <NoCars brand = {brand} />}
     </div>
 }
 
@@ -126,4 +126,11 @@ function Car({car}:any):JSX.Element{
                     </div>
                 </Card>
     </div>
+}
+
+
+function NoCars({brand}:any){
+    return <div id='noCarsDiv'>
+                <h2>`No ${brand} cars available currently` </h2>
+            </div>
 }
