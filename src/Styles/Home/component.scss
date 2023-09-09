@@ -93,14 +93,14 @@
         width: 100%;
         align-items: center;
         justify-content: center;
-        button{
+        #callToActionButton{
             background-color: rgba(148, 244, 23) ;
             box-shadow: rgba(148, 244, 23) 4px 4px 6px 6px;
             color: rgb(0, 0, 0);
             font-family: 'montserrat','Courier New', Courier, monospace;
-            position: absolute;
+            position: relative;
             top: 80vh;
-            left: 35vw;
+            // left: 35vw;
             a{
                 text-decoration: none;
                 color:black
@@ -205,9 +205,9 @@
             }
 
             #callToActionDiv{
-                button{
-            top: 70vh;
-            left:50vw
+                #callToActionButton{
+            top: -15vh;
+            // left:50vw
                 }
             }
 

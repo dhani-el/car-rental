@@ -94,16 +94,15 @@
   align-items: center;
   justify-content: center;
 }
-#bodyDiv #abslouteContentContainer #callToActionDiv button {
+#bodyDiv #abslouteContentContainer #callToActionDiv #callToActionButton {
   background-color: rgb(148, 244, 23);
   box-shadow: rgb(148, 244, 23) 4px 4px 6px 6px;
   color: rgb(0, 0, 0);
   font-family: "montserrat", "Courier New", Courier, monospace;
-  position: absolute;
+  position: relative;
   top: 80vh;
-  left: 35vw;
 }
-#bodyDiv #abslouteContentContainer #callToActionDiv button a {
+#bodyDiv #abslouteContentContainer #callToActionDiv #callToActionButton a {
   text-decoration: none;
   color: black;
 }
@@ -194,9 +193,8 @@
     align-self: center;
     position: static;
   }
-  #bodyDiv #abslouteContentContainer #callToActionDiv button {
-    top: 70vh;
-    left: 50vw;
+  #bodyDiv #abslouteContentContainer #callToActionDiv #callToActionButton {
+    top: -15vh;
   }
   #bodyDiv #model {
     position: absolute;

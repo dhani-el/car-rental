@@ -69,11 +69,11 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-family: 'bebas','Courier New', Courier, monospace;
                 p{
                     color: black;
                     font-size: 2em;
                     font-weight: 900;
+                    font-family: 'bebas','Courier New', Courier, monospace;
                 }
             }
         }
@@ -173,6 +173,18 @@
             }
         }
     }
+    #noCarsDiv{
+        min-height: inherit;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2{
+            color: black;
+            font-family: 'bebas','Courier New', Courier, monospace;
+            text-align: center;
+        }
+    }
 }
 
 @media (orientation : 'landscape'){
@@ -214,16 +226,7 @@
                 }
             }
         }
-        #noCarsDiv{
-            height: inherit;
-            width: 100vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            h2{
-                text-align: center;
-            }
-        }
+
     }
     
 }
