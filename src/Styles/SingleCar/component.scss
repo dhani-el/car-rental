@@ -1,5 +1,16 @@
 
-
+@font-face {
+    font-family: 'bebas';
+    src: url("../../assets/fonts/bebas.ttf");
+}
+@font-face {
+    font-family:'courgette';
+    src: url("../../assets/fonts/Courgette.ttf");
+}
+@font-face {
+    font-family: 'montserrat';
+    src: url("../../assets/fonts/Montserrat.ttf");
+}
 
 #singleCarContainer{
     width: 100vw;
@@ -34,9 +45,11 @@
             #cartitleNyearSpan{
                 color: white;
                 h2{
+                    font-family: 'bebas','Courier New', Courier, monospace;
                     font-weight: 900;
                 }
                 p{
+                    font-family: 'courgette','Courier New', Courier, monospace;
                     color: rgb(164, 163, 163);
                     font-weight: 900;
                 }
@@ -49,10 +62,12 @@
 
         h2{
             padding-left: 1em;
+            font-family: 'montserrat','Courier New', Courier, monospace;
         }
 
         #carSpecificationDiv{
             h2{
+                font-family: 'montserrat','Courier New', Courier, monospace;
                 font-weight: 900;
                 color: rgb(177, 177, 177);
             }
@@ -73,6 +88,7 @@
                             background-color: rgb(0, 0, 0);
                             color: aquamarine;
                             border-radius: 1.2em;
+                            font-family: 'montserrat','Courier New', Courier, monospace;
                             #icon{
                                 height: 35%;
                                 width: auto;
@@ -91,6 +107,8 @@
                                     text-overflow: ellipsis;
                                     text-transform: capitalize;
                                     color: rgb(163, 160, 160);
+                                    font-family: 'montserrat','Courier New', Courier, monospace;
+
                                 }
                             }
                         }
@@ -105,12 +123,14 @@
                 display: flex;
                 justify-content: space-between;
                 #locationText{
+                    font-family: 'montserrat','Courier New', Courier, monospace;
                     font-size: 1.5em;
                     font-weight: 900;
                     padding-left: 0.8em;
                     color: rgb(177, 177, 177);
                 }
                 #meters{
+                    font-family: 'courgette','Courier New', Courier, monospace;
                     font-size: 1.2em;
                 }
                 #leftOfLocation{
@@ -119,7 +139,8 @@
                     color: gray;
                     align-items: flex-end;
                     p{
-                        color: gray;
+                    font-family: 'montserrat','Courier New', Courier, monospace;
+                    color: gray;
                     }
                 }
             }
@@ -136,6 +157,7 @@
                     color: aquamarine;
                 }
                 p{
+                    font-family: 'montserrat','Courier New', Courier, monospace;
                     width: 90%;
                     overflow: hidden;
                     white-space: nowrap;
@@ -164,6 +186,7 @@
             font-weight: 900;
             text-transform: capitalize;
             color: rgb(67, 67, 67);
+            font-family: 'montserrat','Courier New', Courier, monospace;
         }
         span{
             width: 50%;
@@ -174,6 +197,7 @@
             background-color: aquamarine;
             border-top-left-radius: 1.5em;
             border-bottom-right-radius: 1.5em;
+            font-family: 'bebas','Courier New', Courier, monospace;
             font-size: 1.5em;
         }
     }
