@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "bebas";
+  src: url("../../assets/fonts/bebas.ttf");
+}
+@font-face {
+  font-family: "courgette";
+  src: url("../../assets/fonts/Courgette.ttf");
+}
+@font-face {
+  font-family: "montserrat";
+  src: url("../../assets/fonts/Montserrat.ttf");
+}
 #searchComponentContainer {
   width: 100%;
   display: flex;
@@ -26,6 +38,7 @@
   align-items: center;
   width: 100%;
   gap: 1em;
+  font-family: "montserrat", "Courier New", Courier, monospace;
 }
 #searchComponentContainer #searchComponentCard #searchBar fieldset {
   border-color: black;
@@ -58,6 +71,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "bebas", "Courier New", Courier, monospace;
 }
 #brandsContainer #brandsSwiperContainer #slideR #allBrandsComponent p {
   color: black;
@@ -83,6 +97,7 @@
 }
 #carsContainer h3 {
   margin-bottom: 1.5em;
+  font-family: "bebas", "Courier New", Courier, monospace;
 }
 #carsContainer #listOfCars {
   width: 100vw;
@@ -113,6 +128,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  font-family: "montserrat", "Courier New", Courier, monospace;
 }
 #carsContainer #listOfCars #Acar .aCarCard #firstDiv #textDiv h3 {
   margin-bottom: 0;
@@ -130,6 +146,7 @@
   display: flex;
 }
 #carsContainer #listOfCars #Acar .aCarCard #secondDiv #priceSpan #price {
+  font-family: "courgette", "Courier New", Courier, monospace;
   font-weight: 900;
   margin-bottom: 0.5em;
 }
@@ -143,6 +160,7 @@
   color: navy;
 }
 #carsContainer #listOfCars #Acar .aCarCard #secondDiv a #detailsSpan {
+  font-family: "montserrat", "Courier New", Courier, monospace;
   background-color: aquamarine;
   padding: 0.8em;
   border-top-left-radius: 0.5em;
